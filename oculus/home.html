@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240407090732">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class=" menu__item">
+								<a href="#" class="menu__link">SHOP</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">GAMES</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link">METAVERSE</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<img class="header__logo" src="img/header/01.svg" alt="Logo">
+				<a href="#" class="header__basket">
+					<img src="img/header/02.svg" alt="basket">
+					<span>11</span>
+				</a>
+				<button class="header__icon icon-menu"><span></span></button>
+			</div>
+		</header>
+		<main class="page">
+
+			<section class="page__quest quest">
+				<div class="quest__container">
+					<h1 class="quest__title">Meta Quest 2</h1>
+					<h3 class="quest__sub-title">Get an Elite Strap free</h3>
+					<div class="quest__text">For a limited time only, save $59.99 USD. Offer ends 1/19/23</div>
+					<div class="quest__buttons">
+						<button type="button" class="quest__button button button--gradient">BUY NOW</button>
+						<button type="button" class="quest__button button button--transparent">399,99 USD</button>
+					</div>
+					<!--<button class="top__button button">
+						<span class="button__buy">BUY NOW</span>
+						<span class="button__text">399,99 USD</span>
+					</button>-->
+					<div class="quest__afeter-text">Meta Quest 2 is for ages 13+</div>
+					<div class="quest__image">
+						<picture><source srcset="img/top/01.webp" type="image/webp"><img class="quest__img" src="img/top/01.jpg" alt=""></picture>
+					</div>
+				</div>
+			</section>
+
+			<section class="page__features features">
+				<div class="features__container">
+					<div data-tabs class="features__tabs tabs">
+						<nav data-tabs-titles class="tabs__navigation">
+							<div class="tabs__label label">PRODUCT FEATURES</div>
+							<button type="button" class="tabs__sub-title _tab-active">01 Graphics</button>
+							<button type="button" class="tabs__sub-title">02 Controls</button>
+							<button type="button" class="tabs__sub-title">03 Processor</button>
+							<button type="button" class="tabs__sub-title">04 Set up your play area</button>
+							<button type="button" class="tabs__sub-title">05 Gardian activity</button>
+							<button type="button" class="tabs__sub-title">06 Headset casting</button>
+						</nav>
+
+						<div data-tabs-body class="tabs__content">
+							<h2 class="tabs__text title">Easy to set up and safe to use</h2>
+							<div class="tabs__body">
+								<picture><source srcset="img/features/01.webp" type="image/webp"><img class="tabs__img ibg" src="img/features/01.jpg" alt="features"></picture>
+							</div>
+							<div class="tabs__body">
+								<picture><source srcset="img/features/02.webp" type="image/webp"><img class="tabs__img ibg" src="img/features/02.jpg" alt="features"></picture>
+							</div>
+							<div class="tabs__body">
+								<picture><source srcset="img/features/03.webp" type="image/webp"><img class="tabs__img ibg" src="img/features/03.jpg" alt="features"></picture>
+							</div>
+							<div class="tabs__body">
+								<picture><source srcset="img/features/04.webp" type="image/webp"><img class="tabs__img ibg" src="img/features/04.jpg" alt="features"></picture>
+							</div>
+							<div class="tabs__body">
+								<picture><source srcset="img/features/05.webp" type="image/webp"><img class="tabs__img ibg" src="img/features/05.jpg" alt="features"></picture>
+							</div>
+							<div class="tabs__body">
+								<picture><source srcset="img/features/06.webp" type="image/webp"><img class="tabs__img ibg" src="img/features/06.jpg" alt="features"></picture>
+							</div>
+						</div>
+						<div class="features__activity activity">
+							<div class="activity__item">
+								<h3 class="activity__title">Graphics</h3>
+								<div class="activity__text">
+									With 1832 x 1920 pixels per eye, everything from multiplayer games and
+									productivity apps to 360 0 videos look beyond incredible
+								</div>
+							</div>
+							<div class="activity__video-block">
+								<video class="activity__video ibg" src="files/01.mp4" controls poster="img/features/02.jpg"></video>
+								<div class="activity__control">
+									<!-- Кнопка воспроизведения с классом activity__play -->
+									<button type="button" class="activity__play _icon-play"></button>
+									<div class="activity__bottom">
+										<h2 class="activity__title activity__title--botom">Watch the video</h2>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+			</section>
+
+			<section data-showmore class="page__games games">
+				<div class="games__container">
+					<div class="games__label label">GAMES</div>
+					<div data-showmore-content="518" class="games__carts carts">
+						<div class="carts__block">
+							<h2 class="carts__title title">It’s all fun and games</h2>
+							<p class="carts__text">Discover new adventures, master epic challenges or revisit classic moments in your
+								favourite games and experiences
+							</p>
+							<button hidden data-showmore-button type="button" class="carts__more button button--transparent">
+								<span>SEE ALL GAMES</span><span>HIDDEN ALL GAMES</span></button>
+						</div>
+						<article class="carts__item">
+							<picture><source srcset="img/games/blade.webp" type="image/webp"><img class="carts__img ibg" src="img/games/blade.jpg" alt="Blade"></picture>
+							<h4 class="carts__title-sub">Blade & Sorcery: Nomad</h4>
+							<p class="carts__text">Step into a medieval fantasy sandbox that uses phisics to
+								serve up some of the most
+							</p>
+							<a href="#" class="carts__link">see more</a>
+						</article>
+						<article class="carts__item">
+							<picture><source srcset="img/games/one.webp" type="image/webp"><img class="carts__img ibg" src="img/games/one.jpg" alt="Blade"></picture>
+							<h4 class="carts__title-sub">Blade & Sorcery: Nomad</h4>
+							<p class="carts__text">Step into a medieval fantasy sandbox that uses phisics to serve up some of the most
+								realistic combat in VR
+							</p>
+							<a href="#" class="carts__link">see more</a>
+						</article>
+						<article class="carts__item">
+							<picture><source srcset="img/games/natural.webp" type="image/webp"><img class="carts__img ibg" src="img/games/natural.jpg" alt="Blade"></picture>
+							<h4 class="carts__title-sub">Blade & Sorcery: Nomad</h4>
+							<p class="carts__text">Step into a medieval fantasy sandbox that uses phisics to serve up some of the most
+								realistic combat in VR
+							</p>
+							<a href="#" class="carts__link">see more</a>
+						</article>
+						<article class="carts__item">
+							<picture><source srcset="img/games/blade.webp" type="image/webp"><img class="carts__img ibg" src="img/games/blade.jpg" alt="Blade"></picture>
+							<h4 class="carts__title-sub">Blade & Sorcery: Nomad</h4>
+							<p class="carts__text">Step into a medieval fantasy sandbox that uses phisics to serve up some of the most
+								realistic combat in VR
+							</p>
+							<a href="#" class="carts__link">see more</a>
+						</article>
+						<article class="carts__item">
+							<picture><source srcset="img/games/natural.webp" type="image/webp"><img class="carts__img ibg" src="img/games/natural.jpg" alt="Blade"></picture>
+							<h4 class="carts__title-sub">Blade & Sorcery: Nomad</h4>
+							<p class="carts__text">Step into a medieval fantasy sandbox that uses phisics to serve up some of the most
+								realistic combat in VR
+							</p>
+							<a href="#" class="carts__link">see more</a>
+						</article>
+						<article class="carts__item">
+							<picture><source srcset="img/games/one.webp" type="image/webp"><img class="carts__img ibg" src="img/games/one.jpg" alt="Blade"></picture>
+							<h4 class="carts__title-sub">Blade & Sorcery: Nomad</h4>
+							<p class="carts__text">Step into a medieval fantasy sandbox that uses phisics to serve up some of the most
+								realistic combat in VR
+							</p>
+							<a href="#" class="carts__link">see more</a>
+						</article>
+
+					</div>
+				</div>
+
+			</section>
+
+			<div class="page__oculus oculus">
+				<div class="oculus__logo">OCULUS</div>
+				<div class="oculus__image">
+					<picture><source srcset="img/oculus/01.webp" type="image/webp"><img class="oculus__img ibg" src="img/oculus/01.png" alt="OCULUS"></picture>
+				</div>
+				<div class="oculus__container">
+					<div class="oculus__buttons">
+						<button type="button" class="oculus__button button button--gradient">BUY NOW</button>
+						<button type="button" class="oculus__button button button--transparent">399,99 USD</button>
+					</div>
+					<div class="oculus__text">Meta Quest 2 is for ages 13+</div>
+				</div>
+			</div>
+
+			<section class="page__included included">
+				<div class="included__container">
+					<div class="included__label label">IN THE BOX</div>
+					<div class="included__items">
+						<div class="included__item included__item--big">
+							<a href="#" class="included__image">
+								<picture><source srcset="img/included/01.webp" type="image/webp"><img class="included__img ibg" src="img/included/01.jpg" alt="Image"></picture>
+							</a>
+							<p class="included__name">VR Headset</p>
+						</div>
+						<div class="included__item">
+							<a href="#" class="included__image">
+								<picture><source srcset="img/included/02.webp" type="image/webp"><img class="included__img ibg" src="img/included/02.jpg" alt="Image"></picture>
+							</a>
+							<p class="included__name">VR Headset</p>
+						</div>
+						<div data-da=".included__item--spacer,510,0" class="included__item">
+							<h2 class="included__title title">What's included</h2>
+						</div>
+						<div class="included__item">
+							<a href="#" class="included__image">
+								<picture><source srcset="img/included/03.webp" type="image/webp"><img class="included__img ibg" src="img/included/03.jpg" alt="Image"></picture>
+							</a>
+							<p class="included__name">VR Headset</p>
+						</div>
+						<div class="included__item included__item--spacer">
+							<a href="#" class="included__image">
+								<picture><source srcset="img/included/04.webp" type="image/webp"><img class="included__img ibg" src="img/included/04.jpg" alt="Image"></picture>
+							</a>
+							<p class="included__name">VR Headset</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="page__loading loading">
+				<div class="loading__container">
+					<div class="loading__image">
+						<picture><source srcset="img/loading/01.webp" type="image/webp"><img class="loading__img ibg" src="img/loading/01.png" alt="Image"></picture>
+					</div>
+					<div class="loading__meta">METAVERSE <br> LOADING…</div>
+					<a href="#" type="button" class="loading__button">GO</a>
+				</div>
+			</section>
+
+
+
+			<section class="page__personalize personalize">
+				<div class="personalize__container">
+					<div class="personalize__label label">ACCESSORIES</div>
+					<h2 class="personalize__title title">Personalize every experience</h2>
+
+					<!-- Оболонка слайдера -->
+					<div class="personalize__slider swiper">
+						<!-- Частина слайдера, що рухається -->
+						<div class="personalize__wrapper swiper-wrapper">
+
+							<!-- Слайд -->
+							<div class="personalize__slide swiper-slide">
+								<div class="personalize__image">
+									<picture><source srcset="img/personalize/01.webp" type="image/webp"><img class="personalize__img ibg" src="img/personalize/01.png" alt="Image"></picture>
+								</div>
+								<div class="personalize__name">Meta Quest 2 Carrying Case</div>
+								<p>Protect your system–at home or away.</p>
+								<div class="personalize__price">$59.99 USD</div>
+								<button class="personalize__button button button--transparent">BUY NOW</button>
+							</div>
+
+							<div class="personalize__slide swiper-slide">
+								<div class="personalize__image">
+									<picture><source srcset="img/personalize/02.webp" type="image/webp"><img class="personalize__img ibg" src="img/personalize/02.png" alt="Image"></picture>
+								</div>
+								<div class="personalize__name">Link Cable</div>
+								<p>Harness the power of your PC with this premium fiber-optic cable.</p>
+								<div class="personalize__price">$79.99 USD</div>
+								<button type="button" class="personalize__button button button--transparent">BUY NOW</button>
+							</div>
+
+							<div class="personalize__slide swiper-slide">
+								<div class="personalize__image">
+									<picture><source srcset="img/personalize/04.webp" type="image/webp"><img class="personalize__img ibg" src="img/personalize/04.png" alt="Image"></picture>
+								</div>
+								<div class="personalize__name">Meta Quest Gift Cards</div>
+								<p>Redeemable on 350+ games and apps.</p>
+								<div class="personalize__price">$15-50 USD</div>
+								<button class="personalize__button button button--transparent">BUY NOW</button>
+							</div>
+
+							<div class="personalize__slide swiper-slide">
+								<div class="personalize__image">
+									<picture><source srcset="img/personalize/03.webp" type="image/webp"><img class="personalize__img ibg" src="img/personalize/03.png" alt="Image"></picture>
+								</div>
+								<div class="personalize__name">Meta Quest 2 Active Pack</div>
+								<p>A wipeable facial interface, wrist straps, and knuckle straps.</p>
+								<div class="personalize__price">$69.99 USD</div>
+								<button class="personalize__button button button--transparent">BUY NOW</button>
+							</div>
+
+							<div class="personalize__slide swiper-slide">
+								<div class="personalize__image">
+									<picture><source srcset="img/personalize/04.webp" type="image/webp"><img class="personalize__img ibg" src="img/personalize/04.png" alt="Image"></picture>
+								</div>
+								<div class="personalize__name">Meta Quest Gift Cards</div>
+								<p>Redeemable on 350+ games and apps.</p>
+								<div class="personalize__price">$15-50 USD</div>
+								<button class="personalize__button button button--transparent">BUY NOW</button>
+							</div>
+
+							<div class="personalize__slide swiper-slide">
+								<div class="personalize__image">
+									<picture><source srcset="img/personalize/02.webp" type="image/webp"><img class="personalize__img ibg" src="img/personalize/02.png" alt="Image"></picture>
+								</div>
+								<div class="personalize__name">Link Cable</div>
+								<p>Harness the power of your PC with this premium fiber-optic cable.</p>
+								<div class="personalize__price">$79.99 USD</div>
+								<button type="button" class="personalize__button button button--transparent">BUY NOW</button>
+							</div>
+
+						</div>
+						<!-- Якщо потрібна пагінація -->
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</section>
+
+			<section class="page__news news">
+				<div class="news__container">
+					<h4 class="news__sub-title">Get news and updates</h4>
+					<form class="news__form" action="files/sendmail/sendmail.php" method="POST">
+						<input type="text" name="form[email]" data-error="Error" placeholder="E-mail" class="news__input">
+						<button type="submit" class="news__button">GO</button>
+					</form>
+					<div class="news__items">
+						<div class="news__policy">
+							By signing up you agree to receive updates and marketing messages (e.g. email, social, etc.) from Meta
+							about Meta’s existing and future products and services. <br>
+							You may withdraw your consent and unsubscribe at any time by clicking the unsubscribe link included in our
+							messages. <br>
+							Your subscription is subject to the Terms and Privacy Policy.
+						</div>
+						<a href="mailto:oculusshop@gmail.com" class="news__mail">oculusshop@gmail.com</a>
+					</div>
+				</div>
+			</section>
+
+		</main>
+		<footer class="page__footer footer">
+			<div class="footer__container">
+				<div class="footer__nav nav">
+					<ul class="nav__list">
+						<li class="nav__item">
+							<a href="#" class="nav__link">SHOP</a>
+						</li>
+						<li class="nav__item">
+							<a href="#" class="nav__link">GAMES</a>
+						</li>
+						<li class="nav__item">
+							<a href="#" class="nav__link">METAVERSE</a>
+						</li>
+						<li class="nav__item">
+							<a href="#" class="nav__link">CONTACT US</a>
+						</li>
+					</ul>
+				</div>
+				<img class="footer__logo" src="img/header/01.svg" alt="Logo">
+				<div class="footer__social">
+					<a href="#" class="footer__icon _icon-you_tube"></a>
+					<a href="#" class="footer__icon _icon-face_book"></a>
+					<a href="#" class="footer__icon _icon-01"></a>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20240407090732"></script>
+</body>
+
+</html>
