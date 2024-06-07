@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240530085142">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240607074944">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +17,29 @@
 		<div id="callback" aria-hidden="true" class="popup">
 			<div class="popup__wrapper">
 				<div class="popup__content">
-					<button data-close type="button" class="popup__close">Закрити</button>
-					<div class="popup__text">
-						Text
+					<div class="popup__body">
+						<div class="popup__text text-popup">Zlatoust Messer</div>
+						<button data-close type="button" class="popup__close">
+							<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+								<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+							</svg>
+						</button>
 					</div>
+					<p></p>
+					<form class="popup__form input-block">
+
+						<div class="input-block__item">
+							<label class="input-block__label" for="first-name">Name</label>
+							<input class="input-block__input" placeholder="Schtefan" type="text" name="first-name" id="first-name" required>
+						</div>
+						<div class="input-block__item">
+							<label class="input-block__label" for="second-name">Telefonnummer</label>
+							<input class="input-block__input" placeholder="+49" type="text" name="second-name" id="second-name" required>
+						</div>
+
+						<button class="popup__button button _icon-ch-right">Rückruf</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -30,10 +49,11 @@
 					<nav class="top-header__menu menu-top-header">
 						<ul data-da=".menu__body,991.98" class="menu-top-header__list">
 							<li class="menu-top-header__item menu-top-header__item--catalog"><a href="#" class="menu-top-header__link menu-top-header__link--catalog _icon-arrow-bottom">Katalog</a></li>
-							<li class="menu-top-header__item"><a href="#" class="menu-top-header__link">Über uns</a></li>
-							<li class="menu-top-header__item"><a href="#" class="menu-top-header__link">Lieferbedingungen</a></li>
-							<li class="menu-top-header__item"><a href="#" class="menu-top-header__link">Nachricht</a></li>
-							<li class="menu-top-header__item"><a href="#" class="menu-top-header__link">Kontakte</a></li>
+							<li class="menu-top-header__item"><a href="about.html" class="menu-top-header__link">Über uns</a></li>
+							<li class="menu-top-header__item"><a href="delivery.html" class="menu-top-header__link">Lieferbedingungen</a>
+							</li>
+							<li class="menu-top-header__item"><a href="news.html" class="menu-top-header__link">Nachricht</a></li>
+							<li class="menu-top-header__item"><a href="contanct.html" class="menu-top-header__link">Kontakte</a></li>
 						</ul>
 					</nav>
 					<a href="#" class="top-header__user _icon-user"><span>Persönliches Büro</span></a>
@@ -45,7 +65,7 @@
 			</div>
 			<div class="header__body body-header">
 				<div class="body-header__container">
-					<a href="#" class="body-header__logo"></a>
+					<a href="home.html" class="body-header__logo"></a>
 					<div data-da=".catalog-header__container,479.98,1" class="body-header__search">
 						<form action="#" class="search-header">
 							<button type="submit" class="search-header__button _icon-search"></button>
@@ -547,13 +567,13 @@
 									<img src="img/main/01.webp" alt="Image">
 								</div>
 								<div class="media-main-block__tips">
-									<div data-tippy-content="Подсказка" class="media-main-block__tip media-main-block__tip_1">
+									<div data-tippy-content="Hinweis" class="media-main-block__tip media-main-block__tip_1">
 										<span>+</span>
 									</div>
-									<div data-tippy-content="Подсказка" class="media-main-block__tip media-main-block__tip_2">
+									<div data-tippy-content="Hinweis" class="media-main-block__tip media-main-block__tip_2">
 										<span>+</span>
 									</div>
-									<div data-tippy-content="Подсказка" class="media-main-block__tip media-main-block__tip_3">
+									<div data-tippy-content="Hinweis" class="media-main-block__tip media-main-block__tip_3">
 										<span>+</span>
 									</div>
 								</div>
@@ -899,8 +919,6 @@
 										</div>
 									</article>
 								</div>
-
-
 							</div>
 							<div class="products-slider__dotts"></div>
 						</div>
@@ -1259,8 +1277,6 @@
 										</div>
 									</article>
 								</div>
-
-
 							</div>
 							<div class="products-slider__dotts"></div>
 						</div>
@@ -1445,8 +1461,6 @@
 										</div>
 									</article>
 								</div>
-
-
 							</div>
 							<div class="products-slider__dotts"></div>
 						</div>
@@ -1805,8 +1819,6 @@
 										</div>
 									</article>
 								</div>
-
-
 							</div>
 							<div class="products-slider__dotts"></div>
 						</div>
@@ -1991,8 +2003,6 @@
 										</div>
 									</article>
 								</div>
-
-
 							</div>
 							<div class="products-slider__dotts"></div>
 						</div>
@@ -2258,8 +2268,6 @@
 										</div>
 									</article>
 								</div>
-
-
 							</div>
 							<div class="products-slider__dotts"></div>
 						</div>
@@ -2302,7 +2310,7 @@
 													<a href="#" class="menu-footer__link">Messerstahl</a>
 												</li>
 												<li class="menu-footer__item">
-													<a href="#" class="menu-footer__link">Über uns</a>
+													<a href="about.html" class="menu-footer__link">Über uns</a>
 												</li>
 												<li class="menu-footer__item">
 													<a href="#" class="menu-footer__link">Zahlungsbedingungen und Lieferung</a>
@@ -2324,7 +2332,7 @@
 										<nav class="menu-footer">
 											<ul class="menu-footer__list">
 												<li class="menu-footer__item">
-													<a href="#" class="menu-footer__link">Kontaktinformationen</a>
+													<a href="contanct.html" class="menu-footer__link">Kontaktinformationen</a>
 												</li>
 												<li class="menu-footer__item">
 													<a href="#" class="menu-footer__link">Kaufrendite</a>
@@ -2341,24 +2349,18 @@
 						<div class="body-footer__item item-footer">
 							<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
 								<details class="spollers-item-footer__item">
-									<summary class="spollers-item-footer__title">Information</summary>
+									<summary class="spollers-item-footer__title">ZUSÄTZLICH</summary>
 									<div class="spollers-item-footer__body">
 										<nav class="menu-footer">
 											<ul class="menu-footer__list">
 												<li class="menu-footer__item">
-													<a href="#" class="menu-footer__link">Zlatoust Messer</a>
+													<a href="#" class="menu-footer__link">Geschenkgutscheine</a>
 												</li>
 												<li class="menu-footer__item">
-													<a href="#" class="menu-footer__link">Messerstahl</a>
+													<a href="#" class="menu-footer__link">Partner</a>
 												</li>
 												<li class="menu-footer__item">
-													<a href="#" class="menu-footer__link">Über uns</a>
-												</li>
-												<li class="menu-footer__item">
-													<a href="#" class="menu-footer__link">Zahlungsbedingungen und Lieferung</a>
-												</li>
-												<li class="menu-footer__item">
-													<a href="#" class="menu-footer__link">Politik Privatsphäre</a>
+													<a href="#" class="menu-footer__link">Rabatt Waren</a>
 												</li>
 											</ul>
 										</nav>
@@ -2369,18 +2371,21 @@
 						<div class="body-footer__item item-footer">
 							<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
 								<details class="spollers-item-footer__item">
-									<summary class="spollers-item-footer__title">UNTERSTÜTZUNG</summary>
+									<summary class="spollers-item-footer__title">PERSÖNLICHES BÜRO</summary>
 									<div class="spollers-item-footer__body">
 										<nav class="menu-footer">
 											<ul class="menu-footer__list">
 												<li class="menu-footer__item">
-													<a href="#" class="menu-footer__link">Kontaktinformationen</a>
+													<a href="#" class="menu-footer__link">Persönliches Büro</a>
 												</li>
 												<li class="menu-footer__item">
-													<a href="#" class="menu-footer__link">Kaufrendite</a>
+													<a href="#" class="menu-footer__link">Geschichte der Bestellungen</a>
 												</li>
 												<li class="menu-footer__item">
-													<a href="#" class="menu-footer__link">Kartenstelle</a>
+													<a href="#" class="menu-footer__link">Meine Lesezeichen</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="news.html" class="menu-footer__link">Nachrichten Newsletter</a>
 												</li>
 											</ul>
 										</nav>
@@ -2500,7 +2505,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240530085142"></script>
+	<script src="js/app.min.js?_v=20240607074944"></script>
 </body>
 
 </html>

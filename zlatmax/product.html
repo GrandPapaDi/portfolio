@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-	<title>Catalog</title>
+	<title>Product</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240530085142">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240607074944">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +17,29 @@
 		<div id="callback" aria-hidden="true" class="popup">
 			<div class="popup__wrapper">
 				<div class="popup__content">
-					<button data-close type="button" class="popup__close">Закрити</button>
-					<div class="popup__text">
-						Text
+					<div class="popup__body">
+						<div class="popup__text text-popup">Zlatoust Messer</div>
+						<button data-close type="button" class="popup__close">
+							<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+								<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+							</svg>
+						</button>
 					</div>
+					<p></p>
+					<form class="popup__form input-block">
+
+						<div class="input-block__item">
+							<label class="input-block__label" for="first-name">Name</label>
+							<input class="input-block__input" placeholder="Schtefan" type="text" name="first-name" id="first-name" required>
+						</div>
+						<div class="input-block__item">
+							<label class="input-block__label" for="second-name">Telefonnummer</label>
+							<input class="input-block__input" placeholder="+49" type="text" name="second-name" id="second-name" required>
+						</div>
+
+						<button class="popup__button button _icon-ch-right">Rückruf</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -30,10 +49,11 @@
 					<nav class="top-header__menu menu-top-header">
 						<ul data-da=".menu__body,991.98" class="menu-top-header__list">
 							<li class="menu-top-header__item menu-top-header__item--catalog"><a href="#" class="menu-top-header__link menu-top-header__link--catalog _icon-arrow-bottom">Katalog</a></li>
-							<li class="menu-top-header__item"><a href="#" class="menu-top-header__link">Über uns</a></li>
-							<li class="menu-top-header__item"><a href="#" class="menu-top-header__link">Lieferbedingungen</a></li>
-							<li class="menu-top-header__item"><a href="#" class="menu-top-header__link">Nachricht</a></li>
-							<li class="menu-top-header__item"><a href="#" class="menu-top-header__link">Kontakte</a></li>
+							<li class="menu-top-header__item"><a href="about.html" class="menu-top-header__link">Über uns</a></li>
+							<li class="menu-top-header__item"><a href="delivery.html" class="menu-top-header__link">Lieferbedingungen</a>
+							</li>
+							<li class="menu-top-header__item"><a href="news.html" class="menu-top-header__link">Nachricht</a></li>
+							<li class="menu-top-header__item"><a href="contanct.html" class="menu-top-header__link">Kontakte</a></li>
 						</ul>
 					</nav>
 					<a href="#" class="top-header__user _icon-user"><span>Persönliches Büro</span></a>
@@ -45,7 +65,7 @@
 			</div>
 			<div class="header__body body-header">
 				<div class="body-header__container">
-					<a href="#" class="body-header__logo"></a>
+					<a href="home.html" class="body-header__logo"></a>
 					<div data-da=".catalog-header__container,479.98,1" class="body-header__search">
 						<form action="#" class="search-header">
 							<button type="submit" class="search-header__button _icon-search"></button>
@@ -485,7 +505,7 @@
 								<a href="#" class="breadcrumbs__link">heim</a>
 							</li>
 							<li class="breadcrumbs__item">
-								<span class="breadcrumbs__current">Messer schneiden</span>
+								<a href="#" class="breadcrumbs__link">Messer schneiden</a>
 							</li>
 							<li class="breadcrumbs__item">
 								<span class="breadcrumbs__current">Messerbullfinch</span>
@@ -545,6 +565,7 @@
 									<a href="#" class="header-product__link _icon-favorite"></a>
 								</div>
 								<div data-rating="set" class="header-product__rating rating"></div>
+								<div class="header-product__lager">Auf Lager</div>
 							</div>
 							<div class="body-product__table table-product">
 								<div class="table-product__label">Artikel:</div>
@@ -556,14 +577,58 @@
 								<div class="table-product__label">Bonuspunkte:</div>
 								<div class="table-product__value">38</div>
 							</div>
+
 							<div class="body-product__options options-product">
 								<div class="options-product__label">Stahl</div>
 								<div class="options-product__value">
 									<select name="form[]" data-class-modif="form">
-										<option value="1" selected>Пункт №1</option>
-										<option value="2">Пункт №2</option>
-										<option value="3">Пункт №3</option>
-										<option value="4">Пункт №4</option>
+										<option value="1" selected>Wählen Sie Stahl</option>
+										<option value="2">100x13m</option>
+										<option value="3">110x18m-shd</option>
+										<option value="4">40x10S2m (EI-107)</option>
+										<option value="5">50x14mf</option>
+										<option value="6">95Х18</option>
+										<option value="7">AUS-8</option>
+										<option value="8">ELMAX</option>
+										<option value="9">RWL-34</option>
+										<option value="10">ZDI-1016</option>
+										<option value="11">Damaskus ZDI-1016</option>
+									</select>
+								</div>
+								<div class="options-product__label">Handhaben</div>
+								<div class="options-product__value">
+									<select name="form[]" data-class-modif="form">
+										<option value="1" selected>Wählen Sie einen Griff</option>
+										<option value="2">Hornbream</option>
+										<option value="3">Kohlenstoff</option>
+										<option value="4">Karelianische Birke</option>
+										<option value="5">Quartal</option>
+										<option value="6">Kombiniert</option>
+										<option value="7">Kombinierte Suite</option>
+										<option value="8">Zusammengesetzt</option>
+										<option value="9">Kraton</option>
+										<option value="10">Leder</option>
+									</select>
+								</div>
+								<div class="options-product__label">Parierbügel und Knauf</div>
+								<div class="options-product__value">
+									<select name="form[]" data-class-modif="form">
+										<option value="1" selected>Wählen Sie eine Parierbügel</option>
+										<option value="2">Aluminium</option>
+										<option value="3">Messing</option>
+										<option value="4">Casting</option>
+										<option value="5">Melchior</option>
+										<option value="6">Metall</option>
+										<option value="7">Edelstahl</option>
+									</select>
+								</div>
+								<div class="options-product__label">Verarbeitung der Klinge</div>
+								<div class="options-product__value">
+									<select name="form[]" data-class-modif="form">
+										<option value="1" selected>Wählen Sie die Verarbeitung</option>
+										<option value="2">№1</option>
+										<option value="3">№2</option>
+										<option value="4">№3</option>
 									</select>
 								</div>
 							</div>
@@ -582,250 +647,790 @@
 									</div>
 									<div class="actions-product__buttons">
 										<a href="#" class="actions-product__cart button"><span class="_icon-cart">in den Korb</span></a>
-										<a href="#" class="actions-product__cart button button_black">Kaufen</a>
+										<a href="#" class="actions-product__button button button--black">Kaufen in 1 Klick</a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-	</div>
-	</div>
-	</main>
-	<footer class="footer">
-		<section class="footer__text text-footer">
-			<div class="text-footer__container">
-				<h1 class="text-footer__title">Zlatoust Messer Online -Shop "Zlatmax"</h1>
-				<div class="text-footer__text">
-					Unser Online -Shop Zlatmax bietet Ihnen Messer von sehr hoher Qualität aus der Stadt der Gunsmiths - Chrysostom.
-					Zlatoust -Messer sind bei den Verbrauchern sowohl auf dem russischen Markt als auch im Ausland bekannt und
-					beliebt: Messer
-					Jagd, Haushalt, Touristen, Angeln, Falten und Werfen.Zlatoust Messer ist ein perfekter Freund und
-					Genossen im Alltag und in extremen Situationen.Die Garantie von bis zu 10 gilt für viele Produkte
-					Jahre sind eine der Hauptindikatoren der Qualität.Für Sie auf unserer Website "Zlatmax" wurde ein riesiges
-					Sortiment vorgeschlagen
-					Zlatoust Messer.Unsere Manager helfen Ihnen bei der Entscheidung und wählen Sie das beste Zlatoust -Messer.
-					Konzentrieren sich auf Ihre Wünsche.
-				</div>
-			</div>
-		</section>
-		<div class="footer__container">
-			<div class="footer__body body-footer">
-				<div class="body-footer__row">
-					<div class="body-footer__item item-footer">
-						<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
-							<details class="spollers-item-footer__item">
-								<summary class="spollers-item-footer__title">Information</summary>
-								<div class="spollers-item-footer__body">
-									<nav class="menu-footer">
-										<ul class="menu-footer__list">
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Zlatoust Messer</a>
-											</li>
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Messerstahl</a>
-											</li>
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Über uns</a>
-											</li>
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Zahlungsbedingungen und Lieferung</a>
-											</li>
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Politik Privatsphäre</a>
-											</li>
-										</ul>
-									</nav>
-								</div>
-							</details>
-						</div>
-					</div>
-					<div class="body-footer__item item-footer">
-						<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
-							<details class="spollers-item-footer__item">
-								<summary class="spollers-item-footer__title">UNTERSTÜTZUNG</summary>
-								<div class="spollers-item-footer__body">
-									<nav class="menu-footer">
-										<ul class="menu-footer__list">
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Kontaktinformationen</a>
-											</li>
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Kaufrendite</a>
-											</li>
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Kartenstelle</a>
-											</li>
-										</ul>
-									</nav>
-								</div>
-							</details>
-						</div>
-					</div>
-					<div class="body-footer__item item-footer">
-						<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
-							<details class="spollers-item-footer__item">
-								<summary class="spollers-item-footer__title">Information</summary>
-								<div class="spollers-item-footer__body">
-									<nav class="menu-footer">
-										<ul class="menu-footer__list">
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Zlatoust Messer</a>
-											</li>
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Messerstahl</a>
-											</li>
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Über uns</a>
-											</li>
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Zahlungsbedingungen und Lieferung</a>
-											</li>
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Politik Privatsphäre</a>
-											</li>
-										</ul>
-									</nav>
-								</div>
-							</details>
-						</div>
-					</div>
-					<div class="body-footer__item item-footer">
-						<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
-							<details class="spollers-item-footer__item">
-								<summary class="spollers-item-footer__title">UNTERSTÜTZUNG</summary>
-								<div class="spollers-item-footer__body">
-									<nav class="menu-footer">
-										<ul class="menu-footer__list">
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Kontaktinformationen</a>
-											</li>
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Kaufrendite</a>
-											</li>
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Kartenstelle</a>
-											</li>
-										</ul>
-									</nav>
-								</div>
-							</details>
-						</div>
-					</div>
-				</div>
-				<div class="body-footer__row">
-					<div class="body-footer__item item-footer">
-						<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
-							<details class="spollers-item-footer__item">
-								<summary class="spollers-item-footer__title">Kontakte</summary>
-								<div class="spollers-item-footer__body">
-									<nav class="menu-footer">
-										<ul class="menu-footer__list">
-											<li class="menu-footer__item">
-												<a href="tel:01627774967" class="menu-footer__link _icon-footer-phone">(162) 777-49-67</a>
-											</li>
-											<li class="menu-footer__item _icon-footer-clock">
-												<div>
-													<p>Mon-Fr</p>
-													<p> 7:00 - 16:00</p>
-												</div>
-											</li>
-											<li class="menu-footer__item _icon-footer-location">
-												<div>
-													<p>Darmstadt,</p>
-													<p>Str.Sixegan, 13</p>
-													<p>Büro "6b"</p>
-												</div>
-											</li>
-											<li class="menu-footer__item">
-												<a href="mailto:info@zlatmax.de" class="menu-footer__link _icon-footer-email">info@zlatmax.de</a>
-											</li>
 
-										</ul>
-									</nav>
-									<ul class="social-footer">
-										<li class="social-footer__item">
-											<a href="#" class="social-footer__link">
-												<img src="img/footer/facebook.svg" alt="Image">
-											</a>
-										</li>
-										<li class="social-footer__item">
-											<a href="#" class="social-footer__link">
-												<img src="img/footer/viber.svg" alt="Image">
-											</a>
-										</li>
-										<li class="social-footer__item">
-											<a href="#" class="social-footer__link">
-												<img src="img/footer/telegram.svg" alt="Image">
-											</a>
-										</li>
-										<li class="social-footer__item">
-											<a href="#" class="social-footer__link">
-												<img src="img/footer/whatsapp.svg" alt="Image">
-											</a>
-										</li>
-									</ul>
-								</div>
-							</details>
-						</div>
-					</div>
-					<div class="body-footer__item item-footer">
-						<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
-							<details class="spollers-item-footer__item">
-								<summary class="spollers-item-footer__title">NÜTZLICHE LINKS</summary>
-								<div class="spollers-item-footer__body">
-									<nav class="menu-footer">
-										<ul class="menu-footer__list">
-											<li class="menu-footer__item">
-												<a href="#" class="menu-footer__link">Zahlungs- und Liefermethoden</a>
+					<div data-tabs="992" class="product__info product-info">
+						<nav data-tabs-titles class="product-info__navigation">
+							<button type="button" class="product-info__title _tab-active">Beschreibung</button>
+							<button type="button" class="product-info__title">Charakteristisch</button>
+							<button type="button" class="product-info__title">Bewertungen</button>
+							<button type="button" class="product-info__title">Lieferung</button>
+						</nav>
+						<div data-tabs-body class="product-info__content">
+							<div class="product-info__body">
+								<p>
+									Ein leichtes bequemes Messer mit einer Klinge mit sanftem konkaven Linsen -fälschten Abfahrten auf
+									zwei Dösen der Breite der Klinge, dünn bilden, Perfekt mit einer Dicke von ca. 0,6 mm im Karren CARTS
+									-Dicke.
+								</p>
+								<p>
+									Der Klinge mit der Hand des Griffs hat eine glatte gewölbte Linie.Am fünf vor dem Griff gibt es
+									Ein subpaliner Ausschnitt für genaue Arbeiten.
+								</p>
+								<p>
+									Es ist notwendig, bei der Arbeit mit großen seitlichen Lasten auf der Klinge des Messers eine gewisse
+									Vorsicht zu zeigen. Aufgrund der geringen Dicke der Klinge Im Arbeitsteil.
+								</p>
+								<p>
+									Installation des Griffs der Rechnung des Plastiks.Oben im Griff, deren Funktion von einem
+									hervorstehenden von unter dargestellt wird Saarfalle, Es gibt ein Loch unter dem Etikett.Dieses Messer
+									ist ein bequemer Assistent bei der Arbeit mit
+									Lebensmitteln und der Jagd nach Borop und Bewässerungsspiel.
+								</p>
+							</div>
+							<div class="product-info__body characteristic-info">
+								<div class="characteristic-info__box">
+									<div class="characteristic-info__items">
+										<h3 class="characteristic-info__title">Technische Eigenschaften</h3>
+										<ul class="characteristic-info__list">
+											<li class="characteristic-info__item">
+												<div class="characteristic-info__length">Gesamtlänge, MM:</div>
+												<div class="characteristic-info__parametr">227</div>
+											</li>
+											<li class="characteristic-info__item">
+												<div class="characteristic-info__length">Klingenlänge, MM:</div>
+												<div class="characteristic-info__parametr">112</div>
+											</li>
+											<li class="characteristic-info__item">
+												<div class="characteristic-info__length">Breite der Klinge, MM:</div>
+												<div class="characteristic-info__parametr">24</div>
+											</li>
+											<li class="characteristic-info__item">
+												<div class="characteristic-info__length">Die Dicke des Hinterns, MM:</div>
+												<div class="characteristic-info__parametr">2.9</div>
 											</li>
 										</ul>
-									</nav>
-								</div>
-							</details>
-						</div>
-					</div>
-					<div class="body-footer__item item-footer">
-						<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
-							<details class="spollers-item-footer__item">
-								<summary class="spollers-item-footer__title">Unsere Garantie</summary>
-								<div class="spollers-item-footer__body">
-									<div href="#" class="spollers-item-footer__text">Unglücklich mit ihrem Kauf?Sie können es während dessen
-										zurückgeben 30 Tage ab dem Datum des Empfangs gemäß <a href="#">unseren Regeln</a>
+									</div>
+									<div class="characteristic-info__items">
+										<h3 class="characteristic-info__title">Verwendete Materialien</h3>
+										<ul class="characteristic-info__list">
+											<li class="characteristic-info__item">
+												<div class="characteristic-info__length">Stahl:</div>
+												<div class="characteristic-info__parametr">95Х18</div>
+											</li>
+											<li class="characteristic-info__item">
+												<div class="characteristic-info__length">Handhaben:</div>
+												<div class="characteristic-info__parametr">Leder</div>
+											</li>
+										</ul>
+									</div>
+									<div class="characteristic-info__items">
+										<h3 class="characteristic-info__title">Produktion</h3>
+										<ul class="characteristic-info__list">
+											<li class="characteristic-info__item">
+												<div class="characteristic-info__length">Produktion:</div>
+												<div class="characteristic-info__parametr">WUESTHOF</div>
+											</li>
+										</ul>
 									</div>
 								</div>
-							</details>
-						</div>
-					</div>
-					<div class="body-footer__item item-footer">
-						<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
-							<details class="spollers-item-footer__item">
-								<summary class="spollers-item-footer__title">NEWSLETTER</summary>
-								<form action="" class="spollers-item-footer__body footer-subscribe">
-									<label for="subscribe-input" class="footer-subscribe__label">Abonnieren Sie jetzt!</label>
-									<div class="footer-subscribe__line">
-										<input id="subscribe-input" autocomplete="off" type="text" name="form[]" data-error="Error" data-required="email" placeholder="info@zlatmax.de" class="footer-subscribe__input">
-										<button class="footer-subscribe__button _icon-arrow-bottom" type="submit"></button>
+							</div>
+							<div class="product-info__body reviews-info">
+								<div class="reviews-info__box">
+									<div class="reviews-info__items">
+										<img data-da=".reviews-info__content,500,0" class="reviews-info__img ibg" src="img/reviews-info/01.webp" alt="Image">
+										<div class="reviews-info__content">
+											<div class="reviews-info__top">
+												<div class="reviews-info__item">
+													<h3 class="reviews-info__title">Oliver Müller</h3>
+													<div data-rating="set" class="reviews-info__rating rating"></div>
+												</div>
+												<div class="reviews-info__date">01.06.2024</div>
+											</div>
+											<div class="reviews-info__text">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor luctus et consectetur augue.
+												Dolor egestas nunc pellentesque hac fringilla. Enim hac scelerisque eu tellus feugiat vel.
+												Ut ac nec eleifend fermentum dictum ullamcorper phasellus at sed.
+											</div>
+											<div class="reviews-info__bottom">
+												<a href="#" class="reviews-info__answer">Answer</a>
+												<a href="#" class="reviews-info__like _icon-favorite"></a>
+											</div>
+										</div>
 									</div>
-								</form>
-							</details>
+									<div class="reviews-info__items">
+										<img data-da=".reviews-info__content--bottom,500,0" class="reviews-info__img ibg" src="img/reviews-info/02.webp" alt="Image">
+										<div class="reviews-info__content reviews-info__content--bottom">
+											<div class="reviews-info__top">
+												<div class="reviews-info__item">
+													<h3 class="reviews-info__title">Stefan Müller</h3>
+													<div data-rating="set" class="reviews-info__rating rating"></div>
+												</div>
+												<div class="reviews-info__date">01.06.2024</div>
+											</div>
+											<div class="reviews-info__text">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor luctus et consectetur augue.
+												Dolor egestas nunc pellentesque hac fringilla. Enim hac scelerisque eu tellus feugiat vel.
+												Ut ac nec eleifend fermentum dictum ullamcorper phasellus at sed.
+											</div>
+											<div class="reviews-info__bottom">
+												<div class="reviews-info__answer">Answer</div>
+												<div class="reviews-info__like _icon-favorite"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="product-info__body delivery-info">
+
+								<div class="delivery-info__box">
+
+									<div class="delivery-info__label">Ihrer Land</div>
+									<select name="form[]" data-class-modif="form">
+										<option value="1" selected>Ihrer Land</option>
+										<option value="2">Belgien</option>
+										<option value="3">Bulgarien</option>
+										<option value="4">Dänemark</option>
+										<option value="5">Deutschland</option>
+										<option value="6">Finnland</option>
+										<option value="7">Frankreich</option>
+										<option value="8">Griechenland</option>
+										<option value="9">Irland</option>
+										<option value="10">Italien</option>
+										<option value="11">Luxemburg</option>
+										<option value="12">Niederlande</option>
+										<option value="13">Österreich</option>
+										<option value="14">Schweiz</option>
+										<option value="15">Slowakei</option>
+										<option value="16">Spanien</option>
+									</select>
+
+
+									<div class="delivery-info__label">Deine Stadt</div>
+									<select name="form[]" data-class-modif="form">
+										<option value="1" selected>Deine Stadt</option>
+										<option value="2">Prag</option>
+										<option value="3">Madrid</option>
+										<option value="4">Bratislava</option>
+										<option value="5">Bern</option>
+										<option value="6">Stockholm</option>
+										<option value="7">Wien</option>
+										<option value="8">Oslo</option>
+										<option value="9">Amsterdam</option>
+										<option value="10">Luxemburg</option>
+										<option value="11">Rom</option>
+										<option value="12">Dublin</option>
+										<option value="13">Paris</option>
+										<option value="14">Berlin</option>
+										<option value="15">Kopenhagen</option>
+										<option value="16">Sofia</option>
+										<option value="17">Kiew</option>
+										<option value="18">Budapest</option>
+										<option value="19">London</option>
+										<option value="20">Berlin</option>
+										<option value="21">Kopenhagen</option>
+										<option value="22">Sofia</option>
+									</select>
+
+								</div>
+
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="body-footer__bottom">
-					<div class="body-footer__rules">
-						Alle auf der Website veröffentlichten Materialien sind Referenz in der Natur und nicht
-						Öffentliches Angebot durch die Legung.Beim Kopieren von Materialien hyperlink auf www.zlatmax.de
-						Obligatorisch!
+				<section class="page__hits-products sale-products sale-products_no-bottom">
+					<section class="products-slider">
+						<div class="products-slider__container">
+							<div class="products-slider__header">
+								<h2 class="products-slider__title">Ähnliche Waren</h2>
+								<a href="#" class="products-slider__more">Alle Aktien</a>
+							</div>
+							<div class="products-slider__slider swiper">
+								<div class="products-slider__wrapper swiper-wrapper">
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/image.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/02.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/image.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/02.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/image.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/02.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/image.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+								</div>
+								<div class="products-slider__dotts"></div>
+							</div>
+						</div>
+					</section>
+				</section>
+				<section class="page__hits-products sale-products">
+					<section class="products-slider">
+						<div class="products-slider__container">
+							<div class="products-slider__header">
+								<h2 class="products-slider__title">Wir empfehlen</h2>
+								<a href="#" class="products-slider__more">Alle Aktien</a>
+							</div>
+							<div class="products-slider__slider swiper">
+								<div class="products-slider__wrapper swiper-wrapper">
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/image.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/02.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/image.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/02.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/image.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/02.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+									<div class="products-slider__slide swiper-slide">
+										<article class="products-card">
+											<a href="#" class="products-card__image">
+												<img class="products-card__img ibg ibg--contain" src="img/product-card/image.webp" alt="Image">
+											</a>
+											<div class="products-card__body">
+												<h4 class="products-card__title">
+													<a href="#" class="products-card__link-title">Fuchsmesser</a>
+												</h4>
+												<div class="products-card__info info-products-card">
+													<div class="info-products-card__size">95х18</div>
+													<div class="info-products-card__materials">Nuss, Aluminium</div>
+												</div>
+												<div data-rating="set" class="info-products-card__rating-stars rating">12 Bewertungen</div>
+												<div class="products-card__footer">
+													<div class="products-card__price">89 €</div>
+													<a href="#" class="products-card__compare _icon-compare"></a>
+													<a href="#" class="products-card__favorite _icon-favorite"></a>
+												</div>
+												<botton type="button" class="products-card__cart button"><span class="_icon-cart">in den Korb</span>
+												</botton>
+											</div>
+										</article>
+									</div>
+								</div>
+								<div class="products-slider__dotts"></div>
+							</div>
+						</div>
+					</section>
+				</section>
+			</div>
+		</main>
+		<footer class="footer">
+			<section class="footer__text text-footer">
+				<div class="text-footer__container">
+					<h1 class="text-footer__title">Zlatoust Messer Online -Shop "Zlatmax"</h1>
+					<div class="text-footer__text">
+						Unser Online -Shop Zlatmax bietet Ihnen Messer von sehr hoher Qualität aus der Stadt der Gunsmiths - Chrysostom.
+						Zlatoust -Messer sind bei den Verbrauchern sowohl auf dem russischen Markt als auch im Ausland bekannt und
+						beliebt: Messer
+						Jagd, Haushalt, Touristen, Angeln, Falten und Werfen.Zlatoust Messer ist ein perfekter Freund und
+						Genossen im Alltag und in extremen Situationen.Die Garantie von bis zu 10 gilt für viele Produkte
+						Jahre sind eine der Hauptindikatoren der Qualität.Für Sie auf unserer Website "Zlatmax" wurde ein riesiges
+						Sortiment vorgeschlagen
+						Zlatoust Messer.Unsere Manager helfen Ihnen bei der Entscheidung und wählen Sie das beste Zlatoust -Messer.
+						Konzentrieren sich auf Ihre Wünsche.
 					</div>
-					<div class="body-footer__copy">Zlatoust Messer www.zlatmax.de ©</div>
+				</div>
+			</section>
+			<div class="footer__container">
+				<div class="footer__body body-footer">
+					<div class="body-footer__row">
+						<div class="body-footer__item item-footer">
+							<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
+								<details class="spollers-item-footer__item">
+									<summary class="spollers-item-footer__title">Information</summary>
+									<div class="spollers-item-footer__body">
+										<nav class="menu-footer">
+											<ul class="menu-footer__list">
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Zlatoust Messer</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Messerstahl</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="about.html" class="menu-footer__link">Über uns</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Zahlungsbedingungen und Lieferung</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Politik Privatsphäre</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</details>
+							</div>
+						</div>
+						<div class="body-footer__item item-footer">
+							<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
+								<details class="spollers-item-footer__item">
+									<summary class="spollers-item-footer__title">UNTERSTÜTZUNG</summary>
+									<div class="spollers-item-footer__body">
+										<nav class="menu-footer">
+											<ul class="menu-footer__list">
+												<li class="menu-footer__item">
+													<a href="contanct.html" class="menu-footer__link">Kontaktinformationen</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Kaufrendite</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Kartenstelle</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</details>
+							</div>
+						</div>
+						<div class="body-footer__item item-footer">
+							<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
+								<details class="spollers-item-footer__item">
+									<summary class="spollers-item-footer__title">ZUSÄTZLICH</summary>
+									<div class="spollers-item-footer__body">
+										<nav class="menu-footer">
+											<ul class="menu-footer__list">
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Geschenkgutscheine</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Partner</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Rabatt Waren</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</details>
+							</div>
+						</div>
+						<div class="body-footer__item item-footer">
+							<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
+								<details class="spollers-item-footer__item">
+									<summary class="spollers-item-footer__title">PERSÖNLICHES BÜRO</summary>
+									<div class="spollers-item-footer__body">
+										<nav class="menu-footer">
+											<ul class="menu-footer__list">
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Persönliches Büro</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Geschichte der Bestellungen</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Meine Lesezeichen</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="news.html" class="menu-footer__link">Nachrichten Newsletter</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</details>
+							</div>
+						</div>
+					</div>
+					<div class="body-footer__row">
+						<div class="body-footer__item item-footer">
+							<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
+								<details class="spollers-item-footer__item">
+									<summary class="spollers-item-footer__title">Kontakte</summary>
+									<div class="spollers-item-footer__body">
+										<nav class="menu-footer">
+											<ul class="menu-footer__list">
+												<li class="menu-footer__item">
+													<a href="tel:01627774967" class="menu-footer__link _icon-footer-phone">(162) 777-49-67</a>
+												</li>
+												<li class="menu-footer__item _icon-footer-clock">
+													<div>
+														<p>Mon-Fr</p>
+														<p> 7:00 - 16:00</p>
+													</div>
+												</li>
+												<li class="menu-footer__item _icon-footer-location">
+													<div>
+														<p>Darmstadt,</p>
+														<p>Str.Sixegan, 13</p>
+														<p>Büro "6b"</p>
+													</div>
+												</li>
+												<li class="menu-footer__item">
+													<a href="mailto:info@zlatmax.de" class="menu-footer__link _icon-footer-email">info@zlatmax.de</a>
+												</li>
+
+											</ul>
+										</nav>
+										<ul class="social-footer">
+											<li class="social-footer__item">
+												<a href="#" class="social-footer__link">
+													<img src="img/footer/facebook.svg" alt="Image">
+												</a>
+											</li>
+											<li class="social-footer__item">
+												<a href="#" class="social-footer__link">
+													<img src="img/footer/viber.svg" alt="Image">
+												</a>
+											</li>
+											<li class="social-footer__item">
+												<a href="#" class="social-footer__link">
+													<img src="img/footer/telegram.svg" alt="Image">
+												</a>
+											</li>
+											<li class="social-footer__item">
+												<a href="#" class="social-footer__link">
+													<img src="img/footer/whatsapp.svg" alt="Image">
+												</a>
+											</li>
+										</ul>
+									</div>
+								</details>
+							</div>
+						</div>
+						<div class="body-footer__item item-footer">
+							<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
+								<details class="spollers-item-footer__item">
+									<summary class="spollers-item-footer__title">NÜTZLICHE LINKS</summary>
+									<div class="spollers-item-footer__body">
+										<nav class="menu-footer">
+											<ul class="menu-footer__list">
+												<li class="menu-footer__item">
+													<a href="#" class="menu-footer__link">Zahlungs- und Liefermethoden</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</details>
+							</div>
+						</div>
+						<div class="body-footer__item item-footer">
+							<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
+								<details class="spollers-item-footer__item">
+									<summary class="spollers-item-footer__title">Unsere Garantie</summary>
+									<div class="spollers-item-footer__body">
+										<div href="#" class="spollers-item-footer__text">Unglücklich mit ihrem Kauf?Sie können es während dessen
+											zurückgeben 30 Tage ab dem Datum des Empfangs gemäß <a href="#">unseren Regeln</a>
+										</div>
+									</div>
+								</details>
+							</div>
+						</div>
+						<div class="body-footer__item item-footer">
+							<div data-spollers="768" class="item-footer__spollers spollers-item-footer">
+								<details class="spollers-item-footer__item">
+									<summary class="spollers-item-footer__title">NEWSLETTER</summary>
+									<form action="" class="spollers-item-footer__body footer-subscribe">
+										<label for="subscribe-input" class="footer-subscribe__label">Abonnieren Sie jetzt!</label>
+										<div class="footer-subscribe__line">
+											<input id="subscribe-input" autocomplete="off" type="text" name="form[]" data-error="Error" data-required="email" placeholder="info@zlatmax.de" class="footer-subscribe__input">
+											<button class="footer-subscribe__button _icon-arrow-bottom" type="submit"></button>
+										</div>
+									</form>
+								</details>
+							</div>
+						</div>
+					</div>
+					<div class="body-footer__bottom">
+						<div class="body-footer__rules">
+							Alle auf der Website veröffentlichten Materialien sind Referenz in der Natur und nicht
+							Öffentliches Angebot durch die Legung.Beim Kopieren von Materialien hyperlink auf www.zlatmax.de
+							Obligatorisch!
+						</div>
+						<div class="body-footer__copy">Zlatoust Messer www.zlatmax.de ©</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240530085142"></script>
+	<script src="js/app.min.js?_v=20240607074944"></script>
 </body>
 
 </html>
