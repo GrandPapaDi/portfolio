@@ -1025,16 +1025,22 @@ body {
   box-shadow: 0 .125rem .25rem 0 rgba(0,0,0,.08);
   background: #fff;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  min-height: 34.375rem;
+  overflow: hidden
 }
 .latest__body {
-  padding: 0 1.5625rem 1.5625rem 1.5625rem;
   display: flex;
   flex-direction: column;
-  height: 100%
+  height: 100%;
+  overflow: hidden
 }
 .latest__image {
-  aspect-ratio: 403/266
+  height: 16.375rem;
+  aspect-ratio: 398/262
+}
+.latest__image img {
+  height: 100%
 }
 .latest__image:not(:last-child) {
   margin-bottom: 1.5rem
@@ -1050,7 +1056,7 @@ body {
   line-height: 150%
 }
 .latest__trend:not(:last-child) {
-  margin-bottom: 1.3125rem
+  margin-bottom: 1.25rem
 }
 .latest__sub-title {
   font-size: 1.5rem;
@@ -1065,7 +1071,7 @@ body {
   line-height: 150%
 }
 .latest__text:not(:last-child) {
-  margin-bottom: 1.375rem
+  margin-bottom: 1.25rem
 }
 .latest__link {
   order: 1;
@@ -1313,6 +1319,15 @@ body {
   .latest__container {
     padding-bottom: 8rem
   }
+  .latest__body {
+    padding-right: 1.5625rem
+  }
+  .latest__body {
+    padding-left: 1.5625rem
+  }
+  .latest__body {
+    padding-bottom: 1.5625rem
+  }
   .top:not(:last-child) {
     margin-bottom: 4.8125rem
   }
@@ -1521,6 +1536,15 @@ body {
   }
   .latest__container {
     padding-bottom: 2.5rem
+  }
+  .latest__body {
+    padding-right: .9375rem
+  }
+  .latest__body {
+    padding-left: .9375rem
+  }
+  .latest__body {
+    padding-bottom: .9375rem
   }
   .top:not(:last-child) {
     margin-bottom: 2.5rem
@@ -2068,6 +2092,36 @@ body {
   @supports not (padding-bottom:clamp(2.5rem ,0.7222222222rem + 8.8888888889vw ,8rem)) {
     .latest__container {
       padding-bottom: calc(2.5rem + 5.5 * (100vw - 20rem)/ 61.875)
+    }
+  }
+  @supports (padding-right:clamp(0.9375rem ,0.735479798rem + 1.0101010101vw ,1.5625rem)) {
+    .latest__body {
+      padding-right: clamp(.9375rem ,.735479798rem + 1.0101010101vw ,1.5625rem)
+    }
+  }
+  @supports not (padding-right:clamp(0.9375rem ,0.735479798rem + 1.0101010101vw ,1.5625rem)) {
+    .latest__body {
+      padding-right: calc(.9375rem + .625 * (100vw - 20rem)/ 61.875)
+    }
+  }
+  @supports (padding-left:clamp(0.9375rem ,0.735479798rem + 1.0101010101vw ,1.5625rem)) {
+    .latest__body {
+      padding-left: clamp(.9375rem ,.735479798rem + 1.0101010101vw ,1.5625rem)
+    }
+  }
+  @supports not (padding-left:clamp(0.9375rem ,0.735479798rem + 1.0101010101vw ,1.5625rem)) {
+    .latest__body {
+      padding-left: calc(.9375rem + .625 * (100vw - 20rem)/ 61.875)
+    }
+  }
+  @supports (padding-bottom:clamp(0.9375rem ,0.735479798rem + 1.0101010101vw ,1.5625rem)) {
+    .latest__body {
+      padding-bottom: clamp(.9375rem ,.735479798rem + 1.0101010101vw ,1.5625rem)
+    }
+  }
+  @supports not (padding-bottom:clamp(0.9375rem ,0.735479798rem + 1.0101010101vw ,1.5625rem)) {
+    .latest__body {
+      padding-bottom: calc(.9375rem + .625 * (100vw - 20rem)/ 61.875)
     }
   }
   @supports (margin-bottom:clamp(2.5rem ,1.7525252525rem + 3.7373737374vw ,4.8125rem)) {
