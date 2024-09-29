@@ -14,6 +14,75 @@
             document.documentElement.classList.add(className);
         }));
     }
+    let _slideUp = (target, duration = 500, showmore = 0) => {
+        if (!target.classList.contains("_slide")) {
+            target.classList.add("_slide");
+            target.style.transitionProperty = "height, margin, padding";
+            target.style.transitionDuration = duration + "ms";
+            target.style.height = `${target.offsetHeight}px`;
+            target.offsetHeight;
+            target.style.overflow = "hidden";
+            target.style.height = showmore ? `${showmore}px` : `0px`;
+            target.style.paddingTop = 0;
+            target.style.paddingBottom = 0;
+            target.style.marginTop = 0;
+            target.style.marginBottom = 0;
+            window.setTimeout((() => {
+                target.hidden = !showmore ? true : false;
+                !showmore ? target.style.removeProperty("height") : null;
+                target.style.removeProperty("padding-top");
+                target.style.removeProperty("padding-bottom");
+                target.style.removeProperty("margin-top");
+                target.style.removeProperty("margin-bottom");
+                !showmore ? target.style.removeProperty("overflow") : null;
+                target.style.removeProperty("transition-duration");
+                target.style.removeProperty("transition-property");
+                target.classList.remove("_slide");
+                document.dispatchEvent(new CustomEvent("slideUpDone", {
+                    detail: {
+                        target
+                    }
+                }));
+            }), duration);
+        }
+    };
+    let _slideDown = (target, duration = 500, showmore = 0) => {
+        if (!target.classList.contains("_slide")) {
+            target.classList.add("_slide");
+            target.hidden = target.hidden ? false : null;
+            showmore ? target.style.removeProperty("height") : null;
+            let height = target.offsetHeight;
+            target.style.overflow = "hidden";
+            target.style.height = showmore ? `${showmore}px` : `0px`;
+            target.style.paddingTop = 0;
+            target.style.paddingBottom = 0;
+            target.style.marginTop = 0;
+            target.style.marginBottom = 0;
+            target.offsetHeight;
+            target.style.transitionProperty = "height, margin, padding";
+            target.style.transitionDuration = duration + "ms";
+            target.style.height = height + "px";
+            target.style.removeProperty("padding-top");
+            target.style.removeProperty("padding-bottom");
+            target.style.removeProperty("margin-top");
+            target.style.removeProperty("margin-bottom");
+            window.setTimeout((() => {
+                target.style.removeProperty("height");
+                target.style.removeProperty("overflow");
+                target.style.removeProperty("transition-duration");
+                target.style.removeProperty("transition-property");
+                target.classList.remove("_slide");
+                document.dispatchEvent(new CustomEvent("slideDownDone", {
+                    detail: {
+                        target
+                    }
+                }));
+            }), duration);
+        }
+    };
+    let _slideToggle = (target, duration = 500) => {
+        if (target.hidden) return _slideDown(target, duration); else return _slideUp(target, duration);
+    };
     let bodyLockStatus = true;
     let bodyLockToggle = (delay = 500) => {
         if (document.documentElement.classList.contains("lock")) bodyUnlock(delay); else bodyLock(delay);
@@ -52,6 +121,114 @@
             }), delay);
         }
     };
+    function spollers() {
+        const spollersArray = document.querySelectorAll("[data-spollers]");
+        if (spollersArray.length > 0) {
+            document.addEventListener("click", setSpollerAction);
+            const spollersRegular = Array.from(spollersArray).filter((function(item, index, self) {
+                return !item.dataset.spollers.split(",")[0];
+            }));
+            if (spollersRegular.length) initSpollers(spollersRegular);
+            let mdQueriesArray = dataMediaQueries(spollersArray, "spollers");
+            if (mdQueriesArray && mdQueriesArray.length) mdQueriesArray.forEach((mdQueriesItem => {
+                mdQueriesItem.matchMedia.addEventListener("change", (function() {
+                    initSpollers(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                }));
+                initSpollers(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+            }));
+            function initSpollers(spollersArray, matchMedia = false) {
+                spollersArray.forEach((spollersBlock => {
+                    spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
+                    if (matchMedia.matches || !matchMedia) {
+                        spollersBlock.classList.add("_spoller-init");
+                        initSpollerBody(spollersBlock);
+                    } else {
+                        spollersBlock.classList.remove("_spoller-init");
+                        initSpollerBody(spollersBlock, false);
+                    }
+                }));
+            }
+            function initSpollerBody(spollersBlock, hideSpollerBody = true) {
+                let spollerItems = spollersBlock.querySelectorAll("details");
+                if (spollerItems.length) spollerItems.forEach((spollerItem => {
+                    let spollerTitle = spollerItem.querySelector("summary");
+                    if (hideSpollerBody) {
+                        spollerTitle.removeAttribute("tabindex");
+                        if (!spollerItem.hasAttribute("data-open")) {
+                            spollerItem.open = false;
+                            spollerTitle.nextElementSibling.hidden = true;
+                        } else {
+                            spollerTitle.classList.add("_spoller-active");
+                            spollerItem.open = true;
+                        }
+                    } else {
+                        spollerTitle.setAttribute("tabindex", "-1");
+                        spollerTitle.classList.remove("_spoller-active");
+                        spollerItem.open = true;
+                        spollerTitle.nextElementSibling.hidden = false;
+                    }
+                }));
+            }
+            function setSpollerAction(e) {
+                const el = e.target;
+                if (el.closest("summary") && el.closest("[data-spollers]")) {
+                    e.preventDefault();
+                    if (el.closest("[data-spollers]").classList.contains("_spoller-init")) {
+                        const spollerTitle = el.closest("summary");
+                        const spollerBlock = spollerTitle.closest("details");
+                        const spollersBlock = spollerTitle.closest("[data-spollers]");
+                        const oneSpoller = spollersBlock.hasAttribute("data-one-spoller");
+                        const scrollSpoller = spollerBlock.hasAttribute("data-spoller-scroll");
+                        const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+                        if (!spollersBlock.querySelectorAll("._slide").length) {
+                            if (oneSpoller && !spollerBlock.open) hideSpollersBody(spollersBlock);
+                            !spollerBlock.open ? spollerBlock.open = true : setTimeout((() => {
+                                spollerBlock.open = false;
+                            }), spollerSpeed);
+                            spollerTitle.classList.toggle("_spoller-active");
+                            _slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
+                            if (scrollSpoller && spollerTitle.classList.contains("_spoller-active")) {
+                                const scrollSpollerValue = spollerBlock.dataset.spollerScroll;
+                                const scrollSpollerOffset = +scrollSpollerValue ? +scrollSpollerValue : 0;
+                                const scrollSpollerNoHeader = spollerBlock.hasAttribute("data-spoller-scroll-noheader") ? document.querySelector(".header").offsetHeight : 0;
+                                window.scrollTo({
+                                    top: spollerBlock.offsetTop - (scrollSpollerOffset + scrollSpollerNoHeader),
+                                    behavior: "smooth"
+                                });
+                            }
+                        }
+                    }
+                }
+                if (!el.closest("[data-spollers]")) {
+                    const spollersClose = document.querySelectorAll("[data-spoller-close]");
+                    if (spollersClose.length) spollersClose.forEach((spollerClose => {
+                        const spollersBlock = spollerClose.closest("[data-spollers]");
+                        const spollerCloseBlock = spollerClose.parentNode;
+                        if (spollersBlock.classList.contains("_spoller-init")) {
+                            const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+                            spollerClose.classList.remove("_spoller-active");
+                            _slideUp(spollerClose.nextElementSibling, spollerSpeed);
+                            setTimeout((() => {
+                                spollerCloseBlock.open = false;
+                            }), spollerSpeed);
+                        }
+                    }));
+                }
+            }
+            function hideSpollersBody(spollersBlock) {
+                const spollerActiveBlock = spollersBlock.querySelector("details[open]");
+                if (spollerActiveBlock && !spollersBlock.querySelectorAll("._slide").length) {
+                    const spollerActiveTitle = spollerActiveBlock.querySelector("summary");
+                    const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+                    spollerActiveTitle.classList.remove("_spoller-active");
+                    _slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);
+                    setTimeout((() => {
+                        spollerActiveBlock.open = false;
+                    }), spollerSpeed);
+                }
+            }
+        }
+    }
     function menuInit() {
         if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
             if (bodyLockStatus && e.target.closest(".icon-menu")) {
@@ -62,6 +239,156 @@
                 if (menuList && headerBody) if (document.documentElement.classList.contains("menu-open")) menuList.appendChild(headerBody); else document.querySelector(".header__container").appendChild(headerBody);
             }
         }));
+    }
+    function showMore() {
+        window.addEventListener("load", (function(e) {
+            const showMoreBlocks = document.querySelectorAll("[data-showmore]");
+            let showMoreBlocksRegular;
+            let mdQueriesArray;
+            if (showMoreBlocks.length) {
+                showMoreBlocksRegular = Array.from(showMoreBlocks).filter((function(item, index, self) {
+                    return !item.dataset.showmoreMedia;
+                }));
+                showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
+                document.addEventListener("click", showMoreActions);
+                window.addEventListener("resize", showMoreActions);
+                mdQueriesArray = dataMediaQueries(showMoreBlocks, "showmoreMedia");
+                if (mdQueriesArray && mdQueriesArray.length) {
+                    mdQueriesArray.forEach((mdQueriesItem => {
+                        mdQueriesItem.matchMedia.addEventListener("change", (function() {
+                            initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                        }));
+                    }));
+                    initItemsMedia(mdQueriesArray);
+                }
+            }
+            function initItemsMedia(mdQueriesArray) {
+                mdQueriesArray.forEach((mdQueriesItem => {
+                    initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                }));
+            }
+            function initItems(showMoreBlocks, matchMedia) {
+                showMoreBlocks.forEach((showMoreBlock => {
+                    initItem(showMoreBlock, matchMedia);
+                }));
+            }
+            function initItem(showMoreBlock, matchMedia = false) {
+                showMoreBlock = matchMedia ? showMoreBlock.item : showMoreBlock;
+                let showMoreContent = showMoreBlock.querySelectorAll("[data-showmore-content]");
+                let showMoreButton = showMoreBlock.querySelectorAll("[data-showmore-button]");
+                showMoreContent = Array.from(showMoreContent).filter((item => item.closest("[data-showmore]") === showMoreBlock))[0];
+                showMoreButton = Array.from(showMoreButton).filter((item => item.closest("[data-showmore]") === showMoreBlock))[0];
+                const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
+                if (matchMedia.matches || !matchMedia) if (hiddenHeight < getOriginalHeight(showMoreContent)) {
+                    _slideUp(showMoreContent, 0, showMoreBlock.classList.contains("_showmore-active") ? getOriginalHeight(showMoreContent) : hiddenHeight);
+                    showMoreButton.hidden = false;
+                } else {
+                    _slideDown(showMoreContent, 0, hiddenHeight);
+                    showMoreButton.hidden = true;
+                } else {
+                    _slideDown(showMoreContent, 0, hiddenHeight);
+                    showMoreButton.hidden = true;
+                }
+            }
+            function getHeight(showMoreBlock, showMoreContent) {
+                let hiddenHeight = 0;
+                const showMoreType = showMoreBlock.dataset.showmore ? showMoreBlock.dataset.showmore : "size";
+                const rowGap = parseFloat(getComputedStyle(showMoreContent).rowGap) ? parseFloat(getComputedStyle(showMoreContent).rowGap) : 0;
+                if (showMoreType === "items") {
+                    const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 3;
+                    const showMoreItems = showMoreContent.children;
+                    for (let index = 1; index < showMoreItems.length; index++) {
+                        const showMoreItem = showMoreItems[index - 1];
+                        const marginTop = parseFloat(getComputedStyle(showMoreItem).marginTop) ? parseFloat(getComputedStyle(showMoreItem).marginTop) : 0;
+                        const marginBottom = parseFloat(getComputedStyle(showMoreItem).marginBottom) ? parseFloat(getComputedStyle(showMoreItem).marginBottom) : 0;
+                        hiddenHeight += showMoreItem.offsetHeight + marginTop;
+                        if (index == showMoreTypeValue) break;
+                        hiddenHeight += marginBottom;
+                    }
+                    rowGap ? hiddenHeight += (showMoreTypeValue - 1) * rowGap : null;
+                } else {
+                    const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 150;
+                    hiddenHeight = showMoreTypeValue;
+                }
+                return hiddenHeight;
+            }
+            function getOriginalHeight(showMoreContent) {
+                let parentHidden;
+                let hiddenHeight = showMoreContent.offsetHeight;
+                showMoreContent.style.removeProperty("height");
+                if (showMoreContent.closest(`[hidden]`)) {
+                    parentHidden = showMoreContent.closest(`[hidden]`);
+                    parentHidden.hidden = false;
+                }
+                let originalHeight = showMoreContent.offsetHeight;
+                parentHidden ? parentHidden.hidden = true : null;
+                showMoreContent.style.height = `${hiddenHeight}px`;
+                return originalHeight;
+            }
+            function showMoreActions(e) {
+                const targetEvent = e.target;
+                const targetType = e.type;
+                if (targetType === "click") {
+                    if (targetEvent.closest("[data-showmore-button]")) {
+                        const showMoreButton = targetEvent.closest("[data-showmore-button]");
+                        const showMoreBlock = showMoreButton.closest("[data-showmore]");
+                        const showMoreContent = showMoreBlock.querySelector("[data-showmore-content]");
+                        const showMoreSpeed = showMoreBlock.dataset.showmoreButton ? showMoreBlock.dataset.showmoreButton : "500";
+                        const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
+                        if (!showMoreContent.classList.contains("_slide")) {
+                            showMoreBlock.classList.contains("_showmore-active") ? _slideUp(showMoreContent, showMoreSpeed, hiddenHeight) : _slideDown(showMoreContent, showMoreSpeed, hiddenHeight);
+                            showMoreBlock.classList.toggle("_showmore-active");
+                        }
+                    }
+                } else if (targetType === "resize") {
+                    showMoreBlocksRegular && showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
+                    mdQueriesArray && mdQueriesArray.length ? initItemsMedia(mdQueriesArray) : null;
+                }
+            }
+        }));
+    }
+    function uniqArray(array) {
+        return array.filter((function(item, index, self) {
+            return self.indexOf(item) === index;
+        }));
+    }
+    function dataMediaQueries(array, dataSetValue) {
+        const media = Array.from(array).filter((function(item, index, self) {
+            if (item.dataset[dataSetValue]) return item.dataset[dataSetValue].split(",")[0];
+        }));
+        if (media.length) {
+            const breakpointsArray = [];
+            media.forEach((item => {
+                const params = item.dataset[dataSetValue];
+                const breakpoint = {};
+                const paramsArray = params.split(",");
+                breakpoint.value = paramsArray[0];
+                breakpoint.type = paramsArray[1] ? paramsArray[1].trim() : "max";
+                breakpoint.item = item;
+                breakpointsArray.push(breakpoint);
+            }));
+            let mdQueries = breakpointsArray.map((function(item) {
+                return "(" + item.type + "-width: " + item.value + "px)," + item.value + "," + item.type;
+            }));
+            mdQueries = uniqArray(mdQueries);
+            const mdQueriesArray = [];
+            if (mdQueries.length) {
+                mdQueries.forEach((breakpoint => {
+                    const paramsArray = breakpoint.split(",");
+                    const mediaBreakpoint = paramsArray[1];
+                    const mediaType = paramsArray[2];
+                    const matchMedia = window.matchMedia(paramsArray[0]);
+                    const itemsArray = breakpointsArray.filter((function(item) {
+                        if (item.value === mediaBreakpoint && item.type === mediaType) return true;
+                    }));
+                    mdQueriesArray.push({
+                        itemsArray,
+                        matchMedia
+                    });
+                }));
+                return mdQueriesArray;
+            }
+        }
     }
     function ssr_window_esm_isObject(obj) {
         return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
@@ -2596,7 +2923,7 @@
         classes
     };
     const extendedDefaults = {};
-    class swiper_core_Swiper {
+    class Swiper {
         constructor() {
             let el;
             let params;
@@ -2612,7 +2939,7 @@
                     const newParams = utils_extend({}, params, {
                         el: containerEl
                     });
-                    swipers.push(new swiper_core_Swiper(newParams));
+                    swipers.push(new Swiper(newParams));
                 }));
                 return swipers;
             }
@@ -2984,25 +3311,25 @@
             return defaults;
         }
         static installModule(mod) {
-            if (!swiper_core_Swiper.prototype.__modules__) swiper_core_Swiper.prototype.__modules__ = [];
-            const modules = swiper_core_Swiper.prototype.__modules__;
+            if (!Swiper.prototype.__modules__) Swiper.prototype.__modules__ = [];
+            const modules = Swiper.prototype.__modules__;
             if (typeof mod === "function" && modules.indexOf(mod) < 0) modules.push(mod);
         }
         static use(module) {
             if (Array.isArray(module)) {
-                module.forEach((m => swiper_core_Swiper.installModule(m)));
-                return swiper_core_Swiper;
+                module.forEach((m => Swiper.installModule(m)));
+                return Swiper;
             }
-            swiper_core_Swiper.installModule(module);
-            return swiper_core_Swiper;
+            Swiper.installModule(module);
+            return Swiper;
         }
     }
     Object.keys(prototypes).forEach((prototypeGroup => {
         Object.keys(prototypes[prototypeGroup]).forEach((protoMethod => {
-            swiper_core_Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
+            Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
         }));
     }));
-    swiper_core_Swiper.use([ Resize, Observer ]);
+    Swiper.use([ Resize, Observer ]);
     function create_element_if_not_defined_createElementIfNotDefined(swiper, originalParams, params, checkProps) {
         if (swiper.params.createElements) Object.keys(checkProps).forEach((key => {
             if (!params[key] && params.auto === true) {
@@ -3166,21 +3493,407 @@
             destroy
         });
     }
-    function initSliders() {
-        if (document.querySelector(".swiper")) new swiper_core_Swiper(".swiper", {
-            modules: [ Navigation ],
-            parallax: true,
-            observer: true,
-            observeParents: true,
-            slidesPerView: 1,
-            spaceBetween: 0,
-            speed: 800,
-            navigation: {
-                nextEl: ".hero__arrow--prew",
-                prevEl: ".hero__arrow--next"
-            },
-            on: {}
+    function Parallax(_ref) {
+        let {swiper, extendParams, on} = _ref;
+        extendParams({
+            parallax: {
+                enabled: false
+            }
         });
+        const elementsSelector = "[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y], [data-swiper-parallax-opacity], [data-swiper-parallax-scale]";
+        const setTransform = (el, progress) => {
+            const {rtl} = swiper;
+            const rtlFactor = rtl ? -1 : 1;
+            const p = el.getAttribute("data-swiper-parallax") || "0";
+            let x = el.getAttribute("data-swiper-parallax-x");
+            let y = el.getAttribute("data-swiper-parallax-y");
+            const scale = el.getAttribute("data-swiper-parallax-scale");
+            const opacity = el.getAttribute("data-swiper-parallax-opacity");
+            const rotate = el.getAttribute("data-swiper-parallax-rotate");
+            if (x || y) {
+                x = x || "0";
+                y = y || "0";
+            } else if (swiper.isHorizontal()) {
+                x = p;
+                y = "0";
+            } else {
+                y = p;
+                x = "0";
+            }
+            if (x.indexOf("%") >= 0) x = `${parseInt(x, 10) * progress * rtlFactor}%`; else x = `${x * progress * rtlFactor}px`;
+            if (y.indexOf("%") >= 0) y = `${parseInt(y, 10) * progress}%`; else y = `${y * progress}px`;
+            if (typeof opacity !== "undefined" && opacity !== null) {
+                const currentOpacity = opacity - (opacity - 1) * (1 - Math.abs(progress));
+                el.style.opacity = currentOpacity;
+            }
+            let transform = `translate3d(${x}, ${y}, 0px)`;
+            if (typeof scale !== "undefined" && scale !== null) {
+                const currentScale = scale - (scale - 1) * (1 - Math.abs(progress));
+                transform += ` scale(${currentScale})`;
+            }
+            if (rotate && typeof rotate !== "undefined" && rotate !== null) {
+                const currentRotate = rotate * progress * -1;
+                transform += ` rotate(${currentRotate}deg)`;
+            }
+            el.style.transform = transform;
+        };
+        const setTranslate = () => {
+            const {el, slides, progress, snapGrid, isElement} = swiper;
+            const elements = utils_elementChildren(el, elementsSelector);
+            if (swiper.isElement) elements.push(...utils_elementChildren(swiper.hostEl, elementsSelector));
+            elements.forEach((subEl => {
+                setTransform(subEl, progress);
+            }));
+            slides.forEach(((slideEl, slideIndex) => {
+                let slideProgress = slideEl.progress;
+                if (swiper.params.slidesPerGroup > 1 && swiper.params.slidesPerView !== "auto") slideProgress += Math.ceil(slideIndex / 2) - progress * (snapGrid.length - 1);
+                slideProgress = Math.min(Math.max(slideProgress, -1), 1);
+                slideEl.querySelectorAll(`${elementsSelector}, [data-swiper-parallax-rotate]`).forEach((subEl => {
+                    setTransform(subEl, slideProgress);
+                }));
+            }));
+        };
+        const setTransition = function(duration) {
+            if (duration === void 0) duration = swiper.params.speed;
+            const {el, hostEl} = swiper;
+            const elements = [ ...el.querySelectorAll(elementsSelector) ];
+            if (swiper.isElement) elements.push(...hostEl.querySelectorAll(elementsSelector));
+            elements.forEach((parallaxEl => {
+                let parallaxDuration = parseInt(parallaxEl.getAttribute("data-swiper-parallax-duration"), 10) || duration;
+                if (duration === 0) parallaxDuration = 0;
+                parallaxEl.style.transitionDuration = `${parallaxDuration}ms`;
+            }));
+        };
+        on("beforeInit", (() => {
+            if (!swiper.params.parallax.enabled) return;
+            swiper.params.watchSlidesProgress = true;
+            swiper.originalParams.watchSlidesProgress = true;
+        }));
+        on("init", (() => {
+            if (!swiper.params.parallax.enabled) return;
+            setTranslate();
+        }));
+        on("setTranslate", (() => {
+            if (!swiper.params.parallax.enabled) return;
+            setTranslate();
+        }));
+        on("setTransition", ((_swiper, duration) => {
+            if (!swiper.params.parallax.enabled) return;
+            setTransition(duration);
+        }));
+    }
+    function Autoplay(_ref) {
+        let {swiper, extendParams, on, emit, params} = _ref;
+        swiper.autoplay = {
+            running: false,
+            paused: false,
+            timeLeft: 0
+        };
+        extendParams({
+            autoplay: {
+                enabled: false,
+                delay: 3e3,
+                waitForTransition: true,
+                disableOnInteraction: false,
+                stopOnLastSlide: false,
+                reverseDirection: false,
+                pauseOnMouseEnter: false
+            }
+        });
+        let timeout;
+        let raf;
+        let autoplayDelayTotal = params && params.autoplay ? params.autoplay.delay : 3e3;
+        let autoplayDelayCurrent = params && params.autoplay ? params.autoplay.delay : 3e3;
+        let autoplayTimeLeft;
+        let autoplayStartTime = (new Date).getTime();
+        let wasPaused;
+        let isTouched;
+        let pausedByTouch;
+        let touchStartTimeout;
+        let slideChanged;
+        let pausedByInteraction;
+        let pausedByPointerEnter;
+        function onTransitionEnd(e) {
+            if (!swiper || swiper.destroyed || !swiper.wrapperEl) return;
+            if (e.target !== swiper.wrapperEl) return;
+            swiper.wrapperEl.removeEventListener("transitionend", onTransitionEnd);
+            if (pausedByPointerEnter) return;
+            resume();
+        }
+        const calcTimeLeft = () => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            if (swiper.autoplay.paused) wasPaused = true; else if (wasPaused) {
+                autoplayDelayCurrent = autoplayTimeLeft;
+                wasPaused = false;
+            }
+            const timeLeft = swiper.autoplay.paused ? autoplayTimeLeft : autoplayStartTime + autoplayDelayCurrent - (new Date).getTime();
+            swiper.autoplay.timeLeft = timeLeft;
+            emit("autoplayTimeLeft", timeLeft, timeLeft / autoplayDelayTotal);
+            raf = requestAnimationFrame((() => {
+                calcTimeLeft();
+            }));
+        };
+        const getSlideDelay = () => {
+            let activeSlideEl;
+            if (swiper.virtual && swiper.params.virtual.enabled) activeSlideEl = swiper.slides.filter((slideEl => slideEl.classList.contains("swiper-slide-active")))[0]; else activeSlideEl = swiper.slides[swiper.activeIndex];
+            if (!activeSlideEl) return;
+            const currentSlideDelay = parseInt(activeSlideEl.getAttribute("data-swiper-autoplay"), 10);
+            return currentSlideDelay;
+        };
+        const run = delayForce => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            cancelAnimationFrame(raf);
+            calcTimeLeft();
+            let delay = typeof delayForce === "undefined" ? swiper.params.autoplay.delay : delayForce;
+            autoplayDelayTotal = swiper.params.autoplay.delay;
+            autoplayDelayCurrent = swiper.params.autoplay.delay;
+            const currentSlideDelay = getSlideDelay();
+            if (!Number.isNaN(currentSlideDelay) && currentSlideDelay > 0 && typeof delayForce === "undefined") {
+                delay = currentSlideDelay;
+                autoplayDelayTotal = currentSlideDelay;
+                autoplayDelayCurrent = currentSlideDelay;
+            }
+            autoplayTimeLeft = delay;
+            const speed = swiper.params.speed;
+            const proceed = () => {
+                if (!swiper || swiper.destroyed) return;
+                if (swiper.params.autoplay.reverseDirection) {
+                    if (!swiper.isBeginning || swiper.params.loop || swiper.params.rewind) {
+                        swiper.slidePrev(speed, true, true);
+                        emit("autoplay");
+                    } else if (!swiper.params.autoplay.stopOnLastSlide) {
+                        swiper.slideTo(swiper.slides.length - 1, speed, true, true);
+                        emit("autoplay");
+                    }
+                } else if (!swiper.isEnd || swiper.params.loop || swiper.params.rewind) {
+                    swiper.slideNext(speed, true, true);
+                    emit("autoplay");
+                } else if (!swiper.params.autoplay.stopOnLastSlide) {
+                    swiper.slideTo(0, speed, true, true);
+                    emit("autoplay");
+                }
+                if (swiper.params.cssMode) {
+                    autoplayStartTime = (new Date).getTime();
+                    requestAnimationFrame((() => {
+                        run();
+                    }));
+                }
+            };
+            if (delay > 0) {
+                clearTimeout(timeout);
+                timeout = setTimeout((() => {
+                    proceed();
+                }), delay);
+            } else requestAnimationFrame((() => {
+                proceed();
+            }));
+            return delay;
+        };
+        const start = () => {
+            autoplayStartTime = (new Date).getTime();
+            swiper.autoplay.running = true;
+            run();
+            emit("autoplayStart");
+        };
+        const stop = () => {
+            swiper.autoplay.running = false;
+            clearTimeout(timeout);
+            cancelAnimationFrame(raf);
+            emit("autoplayStop");
+        };
+        const pause = (internal, reset) => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            clearTimeout(timeout);
+            if (!internal) pausedByInteraction = true;
+            const proceed = () => {
+                emit("autoplayPause");
+                if (swiper.params.autoplay.waitForTransition) swiper.wrapperEl.addEventListener("transitionend", onTransitionEnd); else resume();
+            };
+            swiper.autoplay.paused = true;
+            if (reset) {
+                if (slideChanged) autoplayTimeLeft = swiper.params.autoplay.delay;
+                slideChanged = false;
+                proceed();
+                return;
+            }
+            const delay = autoplayTimeLeft || swiper.params.autoplay.delay;
+            autoplayTimeLeft = delay - ((new Date).getTime() - autoplayStartTime);
+            if (swiper.isEnd && autoplayTimeLeft < 0 && !swiper.params.loop) return;
+            if (autoplayTimeLeft < 0) autoplayTimeLeft = 0;
+            proceed();
+        };
+        const resume = () => {
+            if (swiper.isEnd && autoplayTimeLeft < 0 && !swiper.params.loop || swiper.destroyed || !swiper.autoplay.running) return;
+            autoplayStartTime = (new Date).getTime();
+            if (pausedByInteraction) {
+                pausedByInteraction = false;
+                run(autoplayTimeLeft);
+            } else run();
+            swiper.autoplay.paused = false;
+            emit("autoplayResume");
+        };
+        const onVisibilityChange = () => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            const document = ssr_window_esm_getDocument();
+            if (document.visibilityState === "hidden") {
+                pausedByInteraction = true;
+                pause(true);
+            }
+            if (document.visibilityState === "visible") resume();
+        };
+        const onPointerEnter = e => {
+            if (e.pointerType !== "mouse") return;
+            pausedByInteraction = true;
+            pausedByPointerEnter = true;
+            if (swiper.animating || swiper.autoplay.paused) return;
+            pause(true);
+        };
+        const onPointerLeave = e => {
+            if (e.pointerType !== "mouse") return;
+            pausedByPointerEnter = false;
+            if (swiper.autoplay.paused) resume();
+        };
+        const attachMouseEvents = () => {
+            if (swiper.params.autoplay.pauseOnMouseEnter) {
+                swiper.el.addEventListener("pointerenter", onPointerEnter);
+                swiper.el.addEventListener("pointerleave", onPointerLeave);
+            }
+        };
+        const detachMouseEvents = () => {
+            swiper.el.removeEventListener("pointerenter", onPointerEnter);
+            swiper.el.removeEventListener("pointerleave", onPointerLeave);
+        };
+        const attachDocumentEvents = () => {
+            const document = ssr_window_esm_getDocument();
+            document.addEventListener("visibilitychange", onVisibilityChange);
+        };
+        const detachDocumentEvents = () => {
+            const document = ssr_window_esm_getDocument();
+            document.removeEventListener("visibilitychange", onVisibilityChange);
+        };
+        on("init", (() => {
+            if (swiper.params.autoplay.enabled) {
+                attachMouseEvents();
+                attachDocumentEvents();
+                start();
+            }
+        }));
+        on("destroy", (() => {
+            detachMouseEvents();
+            detachDocumentEvents();
+            if (swiper.autoplay.running) stop();
+        }));
+        on("_freeModeStaticRelease", (() => {
+            if (pausedByTouch || pausedByInteraction) resume();
+        }));
+        on("_freeModeNoMomentumRelease", (() => {
+            if (!swiper.params.autoplay.disableOnInteraction) pause(true, true); else stop();
+        }));
+        on("beforeTransitionStart", ((_s, speed, internal) => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            if (internal || !swiper.params.autoplay.disableOnInteraction) pause(true, true); else stop();
+        }));
+        on("sliderFirstMove", (() => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            if (swiper.params.autoplay.disableOnInteraction) {
+                stop();
+                return;
+            }
+            isTouched = true;
+            pausedByTouch = false;
+            pausedByInteraction = false;
+            touchStartTimeout = setTimeout((() => {
+                pausedByInteraction = true;
+                pausedByTouch = true;
+                pause(true);
+            }), 200);
+        }));
+        on("touchEnd", (() => {
+            if (swiper.destroyed || !swiper.autoplay.running || !isTouched) return;
+            clearTimeout(touchStartTimeout);
+            clearTimeout(timeout);
+            if (swiper.params.autoplay.disableOnInteraction) {
+                pausedByTouch = false;
+                isTouched = false;
+                return;
+            }
+            if (pausedByTouch && swiper.params.cssMode) resume();
+            pausedByTouch = false;
+            isTouched = false;
+        }));
+        on("slideChange", (() => {
+            if (swiper.destroyed || !swiper.autoplay.running) return;
+            slideChanged = true;
+        }));
+        Object.assign(swiper.autoplay, {
+            start,
+            stop,
+            pause,
+            resume
+        });
+    }
+    function initSliders() {
+        if (document.querySelector(".swiper")) {
+            new Swiper(".hero", {
+                modules: [ Navigation, Autoplay, Parallax ],
+                parallax: true,
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                speed: 800,
+                loop: true,
+                effect: "fade",
+                autoplay: {
+                    delay: 3e3,
+                    disableOnInteraction: false
+                },
+                navigation: {
+                    nextEl: ".hero__arrow--prew",
+                    prevEl: ".hero__arrow--next"
+                },
+                on: {}
+            });
+            new Swiper(".slider-transport", {
+                modules: [ Navigation, Autoplay ],
+                parallax: true,
+                observer: true,
+                observeParents: true,
+                slidesPerView: 4,
+                spaceBetween: 20,
+                speed: 800,
+                loop: true,
+                effect: "fade",
+                autoplay: {
+                    delay: 3e3,
+                    disableOnInteraction: false
+                },
+                navigation: {
+                    nextEl: ".transport__swiper-button-prev",
+                    prevEl: ".transport__swiper-button-next"
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 15,
+                        autoHeight: true
+                    },
+                    540: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    680: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    960: {
+                        slidesPerView: 4,
+                        spaceBetween: 20
+                    }
+                },
+                on: {}
+            });
+        }
     }
     window.addEventListener("load", (function(e) {
         initSliders();
@@ -3351,4 +4064,6 @@
     window["FLS"] = true;
     isWebp();
     menuInit();
+    spollers();
+    showMore();
 })();

@@ -4,33 +4,53 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Верстка «kunSinGO»</title>
+	<title>«kunSinGO»</title>
 </head>
 
 <body>
 	<div class="rootpage">
-		<h1>Верстка «kunSinGO»</h1>
+		<h1>«kunSinGO»</h1>
 		<div class="rootpage__info">
-			Опис проєкту
+			Description of the project
 		</div>
-		<h2>Готові сторінки:</h2>
+		<h2>Ready pages:</h2>
 		<ol class="rootpage__list">
-			<li><a target="_blank" href="home.html">Головна</a></li>
-		</ol>
-		<h2>Попапи:</h2>
-		<ol class="rootpage__list">
-			<li><a target="_blank" href="home.html#"></a></li>
+			<li><a target="_blank" href="home.html">main</a></li>
 		</ol>
 		<div class="rootpage__tnx">
-			<h2>Дякую за замовлення!</h2>
-			<p>Буду радий (да) гарному відгуку.</p>
-			<p>Звертайтесь ще!</p>
+			<h2>Thank you for your order!</h2>
+			<p>I will be glad (yes) good response.</p>
+			<p>Contact yet!</p>
 		</div>
 		<div class="rootpage__contacts">
-			<h2>Мої контакти:</h2>
-			<p>Пошта: <a href="mailto:email@gmail.com">email@gmail.com</a></p>
-			<p>Телефон: <a href="tel:8800800800">8 800 800 800</a></p>
-			<p>Соц. мережі: <a href="">посилання</a></p>
+			<h2>My contacts:</h2>
+			<p>Mail: <a href="mailto:veradocxl@gmail.com">veradocxl@gmail.com</a></p>
+			<p>Phone: <a href="tel:+491627651680">+491627651680</a></p>
+			<div class="item-media">
+				<h4 class="item-media__label" id="footer-media-label">Media:</h4>
+				<ul class="item-media__list">
+					<li class="item-media__item">
+						<a href="Discord: grand_pappa_disashko" target="_blank" class="item-media__link _icon-git button button--transparent">
+							<img src="img/icons-media/disc.svg" alt="Image">
+						</a>
+					</li>
+					<li class="item-media__item">
+						<a href="https://www.linkedin.com/in/oleksandr-grymut-a34294272/" target="_blank" class="item-media__link button button--transparent">
+							<img src="img/icons-media/insta.svg" alt="Image">
+						</a>
+					</li>
+					<li class="item-media__item">
+						<a href="https://t.me/grandpappadi" target="_blank" class="item-media__link _icon-telgram  button button--transparent">
+							<img src="img/icons-media/telgram.svg" alt="Image">
+						</a>
+					</li>
+					<li class="item-media__item">
+						<a href="https://wa.me/+491627651680" target="_blank" class="item-media__link _icon-whatsapp button button--transparent">
+							<img src="img/icons-media/whatsapp.svg" alt="Image">
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </body>
@@ -55,7 +75,9 @@
 		min-width: 320px;
 		width: 100%;
 		color: #fff;
-		background-color: #5e5373;
+		background: radial-gradient(35% 60% at 1% 43%,
+				rgba(44, 6, 60) 10%,
+				rgba(1, 1, 1, 1) 100%);
 	}
 
 	body {
@@ -162,7 +184,9 @@
 	}
 
 	.rootpage__contacts {
-		background: #32b5a4;
+		background: radial-gradient(27.26% 47.26% at 1% 43%,
+				rgba(44, 6, 60) 0%,
+				rgba(1, 1, 1, 1) 100%);
 
 	}
 
@@ -171,8 +195,39 @@
 	}
 
 	.rootpage__tnx {
-		background: #c22d63;
+		background: radial-gradient(27.26% 47.26% at 1% 43%,
+				rgba(44, 6, 60) 0%,
+				rgba(1, 1, 1, 1) 100%);
 		margin: 0px 0px 1rem 0px;
+	}
+
+	.item-media {
+		display: flex;
+		gap: 10px;
+	}
+
+
+	.item-media__label {
+		font-weight: 500;
+		font-size: toRem(16);
+	}
+
+	.item-media__list {
+		display: flex;
+		gap: 10px;
+	}
+
+	.item-media__item {
+		transition: all 0.3s ease 0s;
+	}
+
+	.item-media__item:hover {
+		transform: scale(1.1);
+	}
+
+	.item-media__item .item-media__link {
+		color: #abb2bf;
+		font-size: toRem(16);
 	}
 </style>
 
