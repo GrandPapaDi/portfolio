@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240930131627">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+
+					<div class="popup__contact contact">
+						<div class="contact__top">
+							<h5 class="contact__sub-title title-sub" id="contactsSubTitle">Message me here:</h5>
+							<button data-close type="button" class="popup__close">
+								<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#ABB2BF" stroke-linecap="square" />
+									<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#ABB2BF" stroke-linecap="square" />
+								</svg>
+							</button>
+						</div>
+						<ul class="contact__list">
+							<li class="contact__item">
+								<a href="Discord: grand_pappa_disashko" target="_blank" class="contact__link contact__link--discord">
+									<div class="contact__blank">discord</div>
+								</a>
+							</li>
+							<li class="contact__item">
+								<a href="https://wa.me/+491627651680" target="_blank" class="contact__link contact__link--whatsapp">
+									<div class="contact__blank">whatsapp</div>
+								</a>
+							</li>
+							<a href="https://t.me/grandpappadi" target="_blank" class="contact__link contact__link--telgram">
+								<div class="contact__blank">telgram</div>
+							</a>
+							<li class="contact__item">
+								<a href="https://www.linkedin.com/in/oleksandr-grymut-a34294272/" target="_blank" class="contact__link contact__link--linkedin">
+									<div class="contact__blank">linkedin.com</div>
+								</a>
+							</li>
+							<li class="contact__item">
+								<a href="mailto:veradocx@gmail.com" target="_blank" class="contact__link contact__link--mail">
+									<div class="contact__blank">veradocxl@gmail.com</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<header class="header">
+			<div class="header__container">
+				<div data-da=".menu__body,768" class="header__media media">
+					<span class="media__line"></span>
+					<ul class="media__list">
+						<li class="media__item">
+							<a href="Discord: grand_pappa_disashko" target="_blank" class="media__link button button--transparent">
+								<img src="img/icons/disc.svg" alt="Image">
+							</a>
+						</li>
+						<li class="media__item">
+							<a href="#" class="media__link button button--transparent">
+								<img src="img/icons/git.svg" alt="Image">
+							</a>
+						</li>
+						<li class="media__item">
+							<a href="https://www.linkedin.com/in/oleksandr-grymut-a34294272/" target="_blank" class="media__link button button--transparent">
+								<img src="img/icons/insta.svg" alt="Image">
+							</a>
+						</li>
+						<li class="media__item">
+							<a href="mailto:veradocx@gmail.com" target="_blank" class="media__link button button--transparent">
+								<img src="img/icons/mail.svg" alt="Image">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__logo">
+					<a href="#" class="header__link">
+						<img src="img/svg/default.svg" alt="Image">
+						<div id="header__name" class="header__name">Alex</div>
+					</a>
+				</div>
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a data-goto=".hero" href="#" id="menu-home" class="menu__link"><span>#</span>home</a>
+							</li>
+							<li class="menu__item">
+								<a data-goto-header data-goto=".projects" href="#" id="menu-works" class="menu__link"><span>#</span>works</a>
+							</li>
+							<li class="menu__item">
+								<a data-goto-header data-goto=".about" href="#" id="menu-about" class="menu__link"><span>#</span>about-me</a>
+							</li>
+							<li class="menu__item">
+								<a data-goto-header data-goto=".reviews" href="#" id="menu-feedback" class="menu__link"><span>#</span>feedback</a>
+							</li>
+							<li class="menu__item">
+								<a data-goto-header data-goto=".contacts" href="#" id="menu-contacts" class="menu__link"><span>#</span>contacts</a>
+							</li>
+							<li class="menu__item">
+								<select class="menu__select" id="language-selector" name="lang">
+									<option value="en">EN</option>
+									<option value="ua">UA</option>
+									<option value="ger">GER</option>
+									<option value="ru">RU</option>
+								</select>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+
+
+
+			<section data-watch="navigator" class="page__hero hero">
+				<div data-watch class="hero__container">
+					<div class="hero__body">
+						<div class="hero__title-item">
+							<h1 id="hero-title-part-1" class="hero__title title">
+								Alex is <span class="hero__lila">a web designer</span> and <span class="hero__lila">front-end
+									developer</span>
+							</h1>
+							<p id="hero-description" class="hero__text text">He crafts responsive websites where technologies meet
+								creativity</p>
+							<a href="#" class="hero__button button button-popup" data-popup="#popup" id="contact-button">Contact
+								me!!!</a>
+						</div>
+						<div class="hero__content">
+							<div class="hero__outline-image-item">
+								<svg class="hero__outline-image" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="path-1-inside-1_64_1296" fill="white">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0 14H13H26V27H13V40H26V53H13H0V40V27V14Z" />
+									</mask>
+									<path d="M0 14V13H-1V14H0ZM26 14H27V13H26V14ZM26 27V28H27V27H26ZM13 27V26H12V27H13ZM13 40H12V41H13V40ZM26 40H27V39H26V40ZM26 53V54H27V53H26ZM0 53H-1V54H0V53ZM13 13H0V15H13V13ZM26 13H13V15H26V13ZM27 27V14H25V27H27ZM13 28H26V26H13V28ZM14 40V27H12V40H14ZM13 41H26V39H13V41ZM25 40V53H27V40H25ZM26 52H13V54H26V52ZM0 54H13V52H0V54ZM-1 40V53H1V40H-1ZM-1 27V40H1V27H-1ZM-1 14V27H1V14H-1Z" fill="#C778DD" mask="url(#path-1-inside-1_64_1296)" />
+									<mask id="path-3-outside-2_64_1296" maskUnits="userSpaceOnUse" x="25" y="0" width="28" height="41" fill="black">
+										<rect fill="white" x="25" width="28" height="41" />
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M26 1H39H52V14V27V40H39H26V27H39V14H26V1Z" />
+									</mask>
+									<path d="M26 1V0H25V1H26ZM52 1H53V0H52V1ZM52 40V41H53V40H52ZM26 40H25V41H26V40ZM26 27V26H25V27H26ZM39 27V28H40V27H39ZM39 14H40V13H39V14ZM26 14H25V15H26V14ZM39 0H26V2H39V0ZM52 0H39V2H52V0ZM53 14V1H51V14H53ZM53 27V14H51V27H53ZM53 40V27H51V40H53ZM39 41H52V39H39V41ZM39 39H26V41H39V39ZM27 40V27H25V40H27ZM26 28H39V26H26V28ZM38 14V27H40V14H38ZM26 15H39V13H26V15ZM25 1V14H27V1H25Z" fill="#C778DD" mask="url(#path-3-outside-2_64_1296)" />
+								</svg>
+							</div>
+							<div class="hero__box">
+								<div class="hero__image-item">
+									<img class="hero__image ibg" src="img/hero/hero.webp" alt="Image">
+								</div>
+								<div class="hero__dot-image-item">
+									<svg class="hero__dot-image" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g filter="url(#filter0_d_23_751)">
+											<circle cx="6" cy="2" r="2" fill="#ABB2BF" />
+											<circle cx="26" cy="2" r="2" fill="#ABB2BF" />
+											<circle cx="46" cy="2" r="2" fill="#ABB2BF" />
+											<circle cx="66" cy="2" r="2" fill="#ABB2BF" />
+											<circle cx="86" cy="2" r="2" fill="#ABB2BF" />
+											<circle cx="6" cy="22" r="2" fill="#ABB2BF" />
+											<circle cx="26" cy="22" r="2" fill="#ABB2BF" />
+											<circle cx="46" cy="22" r="2" fill="#ABB2BF" />
+											<circle cx="66" cy="22" r="2" fill="#ABB2BF" />
+											<circle cx="86" cy="22" r="2" fill="#ABB2BF" />
+											<circle cx="6" cy="42" r="2" fill="#ABB2BF" />
+											<circle cx="26" cy="42" r="2" fill="#ABB2BF" />
+											<circle cx="46" cy="42" r="2" fill="#ABB2BF" />
+											<circle cx="66" cy="42" r="2" fill="#ABB2BF" />
+											<circle cx="86" cy="42" r="2" fill="#ABB2BF" />
+											<circle cx="6" cy="62" r="2" fill="#ABB2BF" />
+											<circle cx="26" cy="62" r="2" fill="#ABB2BF" />
+											<circle cx="46" cy="62" r="2" fill="#ABB2BF" />
+											<circle cx="66" cy="62" r="2" fill="#ABB2BF" />
+											<circle cx="86" cy="62" r="2" fill="#ABB2BF" />
+											<circle cx="6" cy="82" r="2" fill="#ABB2BF" />
+											<circle cx="26" cy="82" r="2" fill="#ABB2BF" />
+											<circle cx="46" cy="82" r="2" fill="#ABB2BF" />
+											<circle cx="66" cy="82" r="2" fill="#ABB2BF" />
+											<circle cx="86" cy="82" r="2" fill="#ABB2BF" />
+										</g>
+										<defs>
+											<filter id="filter0_d_23_751" x="0" y="0" width="92" height="92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+												<feFlood flood-opacity="0" result="BackgroundImageFix" />
+												<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+												<feOffset dy="4" />
+												<feGaussianBlur stdDeviation="2" />
+												<feComposite in2="hardAlpha" operator="out" />
+												<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+												<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_23_751" />
+												<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_23_751" result="shape" />
+											</filter>
+										</defs>
+									</svg>
+								</div>
+								<div>
+									<div class="hero__text-item item-text">
+										<p id="portfolio-text" class="item-text__portfolio text">
+											Currently working on <span class="portfolio-highlight">Portfolio</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<figure class="hero__figure figure">
+						<blockquote class="figure__quot" id="quote-text">
+							With great power comes great electricity bill
+						</blockquote>
+						<cite class="figure__author" id="quote-author">- Dr. Who</cite>
+					</figure>
+					</divdata-watch>
+			</section>
+
+			<section data-showmore data-watch="navigator" class="page__projects projects">
+				<div data-watch class="projects__container">
+					<div class="projects__top top">
+						<h2 class="top__title title"><span>#</span>projects</h2>
+						<div data-watch class="top__btn">
+							<button hidden data-showmore-button type="button" class="top__button button button--white">
+								<span id="viewAll">View all ~~~></span>
+								<span id="viewHidden">Hidden <~~~ </span>
+							</button>
+						</div>
+					</div>
+					<div data-showmore-content="420" class="projects__work work">
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/meta/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/meta.webp" alt="meta">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">JavaScript</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Metaverse</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Landing page</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/meta/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/meta" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/oculus/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/oculus.webp" alt="oculus">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Meta Quest 2</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Landing page</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/oculus/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/oculus" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/zlatmax/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/zlatmax.webp" alt="Image">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Zlatmax</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Internet shop</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/zlatmax/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/zlatmax" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/hairStyList/index.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/hairStyList.webp" alt="hairStyList">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Debonaire</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Landing page</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/hairStyList/index.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/hairStyList" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/nftMarketplace/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/nftMarketplace.webp" alt="nftMarketplace">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">NFT Marketplace</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Landing page</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/nftMarketplace/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/nftMarketplace" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/dental/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/dental.webp" alt="dental">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Multi-page site</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Dental hub</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/dental/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/dental" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/wildkingdom/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/wildkingdom.webp" alt="wildkingdom">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Landing page</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">The Wild Kingdom</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/wildkingdom/index.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/wildkingdom" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/relocaions/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/relocaions.webp" alt="relocaions">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Travel agency</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Multi-page site</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/relocaions/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/relocaions" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/tradingSkills/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/tradingSkills.webp" alt="tradingSkills">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Trading Skills</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Landing page</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/tradingSkills/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/tradingSkills" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/sonicLogicticDraft/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/sonicLogicticDraft.webp" alt="sonicLogicticDraft">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Sonic Logistics</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Multi-page site</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/sonicLogicticDraft/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/sonicLogicticDraft" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/kunSinGO/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/kunSinGO.webp" alt="kunSinGO">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">KunSinGO</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Minecraft servers hosting</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/kunSinGO/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/kunSinGO" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/BusinessJetCharter/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/BusinessJetCharter.webp" alt="BusinessJetCharter">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Luxury Charters</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Landing page</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/BusinessJetCharter/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/BusinessJetCharter" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/RealEstate/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/realEstate.webp" alt="realEstate">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Real Estate</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Landing page</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/RealEstate/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/RealEstate" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/growfy/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/growfy.webp" alt="growfy">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Growfy</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Landing page</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/growfy/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/growfy" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/Relvise/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/relvise.webp" alt="relvise">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Relvise</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Landing page</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/Relvise/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/Relvise" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+
+						<article data-watch class="work__item">
+							<a class="work__item-link" target="_blank" href="https://grandpapadi.github.io/portfolio/realko/home.html">
+								<div class="work__image-item">
+									<img class="work__image ibg" src="img/projects/realko.webp" alt="realko">
+								</div>
+								<ul class="work__list list">
+									<li class="list__item">HTML</li>
+									<li class="list__item">SCSS</li>
+									<li class="list__item">Java Script</li>
+								</ul>
+								<div class="work__content">
+									<div class="work__items">
+										<div class="work__title--item">
+											<h3 class="work__title">Realko</h3>
+										</div>
+										<div class="work__text--item">
+											<p class="work__text text">Landing page</p>
+										</div>
+									</div>
+									<div class="work__buttons">
+										<a href="https://grandpapadi.github.io/portfolio/realko/home.html" class="work__button button" target="_blank">Live <~>
+										</a>
+										<a href="https://github.com/GrandPapaDi/portfolio/tree/main/realko" class="work__button button button--white" target="_blank">GitHub >=</a>
+									</div>
+								</div>
+							</a>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section data-watch="navigator" class="page__skills skills">
+				<div data-watch class="skills__container">
+					<div class="skills__top top">
+						<h2 id="skills-title" class="top__title title"><span>#</span>skills</h2>
+					</div>
+					<div class="skills__tools tools">
+						<article data-watch class="tools__items">
+							<div class="tools__image">
+								<img class="tools__img" src="img/svg/html.svg" alt="Image">
+							</div>
+							<h3 class="tools__title">HTML 5</h3>
+						</article>
+						<article data-watch class="tools__items">
+							<div class="tools__image">
+								<img class="tools__img" src="img/svg/css.svg" alt="Image">
+							</div>
+							<h3 class="tools__title">CSS 3</h3>
+						</article>
+						<article data-watch class="tools__items">
+							<div class="tools__image">
+								<img class="tools__img" src="img/svg/js.svg" alt="Image">
+							</div>
+							<h3 class="tools__title">JavaScript</h3>
+						</article>
+						<article data-watch class="tools__items">
+							<div class="tools__image">
+								<img class="tools__img" src="img/svg/sass.svg" alt="Image">
+							</div>
+							<h3 class="tools__title">SCSS</h3>
+						</article>
+						<article data-watch class="tools__items">
+							<div class="tools__image">
+								<img class="tools__img" src="img/svg/figma.svg" alt="Image">
+							</div>
+							<h3 class="tools__title">Figma</h3>
+						</article>
+						<article data-watch class="tools__items">
+							<div class="tools__image">
+								<img class="tools__img" src="img/svg/git.svg" alt="Image">
+							</div>
+							<h3 class="tools__title">GIT</h3>
+						</article>
+						<article data-watch class="tools__items">
+							<div class="tools__image">
+								<img class="tools__img" src="img/svg/bem.svg" alt="Image">
+							</div>
+							<h3 class="tools__title">BEM</h3>
+						</article>
+						<article data-watch class="tools__items">
+							<div class="tools__image">
+								<img class="tools__img" src="img/svg/swiper.svg" alt="Image">
+							</div>
+							<h3 class="tools__title">Swiper</h3>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section data-watch="navigator" class="page__about about">
+				<div data-watch class="about__container">
+					<div class="about__info">
+						<div class="about__top top">
+							<h2 class="top__title title" id="aboutMeTitle"><span>#</span>about-me</h2>
+						</div>
+						<div data-showmore class="about__block block-about">
+							<div data-showmore-content="330" class="block-about__content">
+								<p class="block-about__text text" id="aboutMeText1">
+									Hi, I'm Alex, a results-driven front-end developer with over a year of experience. Based in Kyiv, I
+									specialize in crafting visually stunning, responsive websites that deliver exceptional user
+									experiences. I have developed a number of websites for my portfolio, covering various industries. And
+									this number continues to grow steadily.
+									Let's collaborate to bring your vision to life.
+								</p>
+								<p class="block-about__text text" id="aboutMeText2">
+									I'm passionate about transforming my creativity and knowledge into successful websites. I've helped
+									various clients establish their online presence and stay ahead of the curve by keeping up with the
+									latest
+									technologies and frameworks.
+								</p>
+								<p class="block-about__text text" id="aboutMeText3">
+									I began my journey into web development and IT in December 2022. Initially, I learned from free
+									YouTube tutorials, gradually diving deeper into the basics. In the spring of 2023, I purchased my
+									first comprehensive JavaScript course. To further enhance my skills, I completed the 'High-Quality Web
+									Interface Development' course taught by one of Ukraine's top instructors, Yevhen Andrikanych. After
+									finishing the course in February 2024, I focused on creating my own portfolio, which I continue to
+									develop today.
+								</p>
+							</div>
+							<button hidden data-showmore-button type="button" id="aboutMeBtn" class="block-about__button button ">
+								<span id="viewAll">Read more ~~~></span>
+								<span id="viewHidden">Read less <~~~ </span>
+							</button>
+						</div>
+
+					</div>
+
+					<div class="about__items">
+						<div class="about__image-item">
+							<img class="about__image ibg" src="img/about/image.webp" alt="Image">
+						</div>
+						<div class="about__dots-item">
+							<svg class="about__dots" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<g filter="url(#filter0_d_23_752)">
+									<circle cx="6" cy="2" r="2" fill="#ABB2BF" />
+									<circle cx="20.75" cy="2" r="2" fill="#ABB2BF" />
+									<circle cx="35.5" cy="2" r="2" fill="#ABB2BF" />
+									<circle cx="50.25" cy="2" r="2" fill="#ABB2BF" />
+									<circle cx="65" cy="2" r="2" fill="#ABB2BF" />
+									<circle cx="6" cy="16.75" r="2" fill="#ABB2BF" />
+									<circle cx="20.75" cy="16.75" r="2" fill="#ABB2BF" />
+									<circle cx="35.5" cy="16.75" r="2" fill="#ABB2BF" />
+									<circle cx="50.25" cy="16.75" r="2" fill="#ABB2BF" />
+									<circle cx="65" cy="16.75" r="2" fill="#ABB2BF" />
+									<circle cx="6" cy="31.5" r="2" fill="#ABB2BF" />
+									<circle cx="20.75" cy="31.5" r="2" fill="#ABB2BF" />
+									<circle cx="35.5" cy="31.5" r="2" fill="#ABB2BF" />
+									<circle cx="50.25" cy="31.5" r="2" fill="#ABB2BF" />
+									<circle cx="65" cy="31.5" r="2" fill="#ABB2BF" />
+									<circle cx="6" cy="46.25" r="2" fill="#ABB2BF" />
+									<circle cx="20.75" cy="46.25" r="2" fill="#ABB2BF" />
+									<circle cx="35.5" cy="46.25" r="2" fill="#ABB2BF" />
+									<circle cx="50.25" cy="46.25" r="2" fill="#ABB2BF" />
+									<circle cx="65" cy="46.25" r="2" fill="#ABB2BF" />
+									<circle cx="6" cy="61" r="2" fill="#ABB2BF" />
+									<circle cx="20.75" cy="61" r="2" fill="#ABB2BF" />
+									<circle cx="35.5" cy="61" r="2" fill="#ABB2BF" />
+									<circle cx="50.25" cy="61" r="2" fill="#ABB2BF" />
+									<circle cx="65" cy="61" r="2" fill="#ABB2BF" />
+								</g>
+								<defs>
+									<filter id="filter0_d_23_752" x="0" y="0" width="71" height="71" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+										<feFlood flood-opacity="0" result="BackgroundImageFix" />
+										<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+										<feOffset dy="4" />
+										<feGaussianBlur stdDeviation="2" />
+										<feComposite in2="hardAlpha" operator="out" />
+										<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+										<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_23_752" />
+										<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_23_752" result="shape" />
+									</filter>
+								</defs>
+							</svg>
+						</div>
+						<div class="about__dotsmall-item">
+							<svg class="about__dotsmall" viewBox="0 0 112 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<g filter="url(#filter0_d_23_889)">
+									<circle cx="6" cy="2" r="2" fill="#ABB2BF" />
+									<circle cx="31" cy="2" r="2" fill="#ABB2BF" />
+									<circle cx="56" cy="2" r="2" fill="#ABB2BF" />
+									<circle cx="81" cy="2" r="2" fill="#ABB2BF" />
+									<circle cx="106" cy="2" r="2" fill="#ABB2BF" />
+									<circle cx="6" cy="19.3333" r="2" fill="#ABB2BF" />
+									<circle cx="31" cy="19.3333" r="2" fill="#ABB2BF" />
+									<circle cx="56" cy="19.3333" r="2" fill="#ABB2BF" />
+									<circle cx="81" cy="19.3333" r="2" fill="#ABB2BF" />
+									<circle cx="106" cy="19.3333" r="2" fill="#ABB2BF" />
+									<circle cx="6" cy="36.6667" r="2" fill="#ABB2BF" />
+									<circle cx="31" cy="36.6667" r="2" fill="#ABB2BF" />
+									<circle cx="56" cy="36.6667" r="2" fill="#ABB2BF" />
+									<circle cx="81" cy="36.6667" r="2" fill="#ABB2BF" />
+									<circle cx="106" cy="36.6667" r="2" fill="#ABB2BF" />
+									<circle cx="6" cy="54" r="2" fill="#ABB2BF" />
+									<circle cx="31" cy="54" r="2" fill="#ABB2BF" />
+									<circle cx="56" cy="54" r="2" fill="#ABB2BF" />
+									<circle cx="81" cy="54" r="2" fill="#ABB2BF" />
+									<circle cx="106" cy="54" r="2" fill="#ABB2BF" />
+								</g>
+								<defs>
+									<filter id="filter0_d_23_889" x="0" y="0" width="112" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+										<feFlood flood-opacity="0" result="BackgroundImageFix" />
+										<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+										<feOffset dy="4" />
+										<feGaussianBlur stdDeviation="2" />
+										<feComposite in2="hardAlpha" operator="out" />
+										<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+										<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_23_889" />
+										<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_23_889" result="shape" />
+									</filter>
+								</defs>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section data-watch="navigator" class="page__reviews reviews">
+				<div data-watch class="reviews__container">
+					<div class="reviews__top top">
+						<h2 class="top__title title" id="feedbackTitle"><span>#</span>feedback</h2>
+					</div>
+					<div class="reviews__slider swiper">
+						<div class="reviews__wrapper swiper-wrapper">
+							<article class="reviews__slide slide-review swiper-slide">
+								<div class="slide-review__header">
+									<img class="slide-review__avatar" src="img/reviews/01.svg" alt="Image">
+									<div data-rating="" data-rating-value="4.5" class="slide-review__rating rating rating--set"></div>
+								</div>
+								<h4 class="slide-review__title">Floyd Miles</h4>
+								<div class="slide-review__text text" id="review_1">
+									<p>
+										Your comments will soon appear here, and I will gladly publish them and give them special attention.
+										I am open to any opinion, whether positive or negative, because your feedback helps me better
+										understand what is truly important to my clients and improves the quality of my web interfaces. My
+										goal is to create modern, user-friendly, and effective solutions that meet your expectations and
+										business needs. Your feedback is the key to my continuous development and the enhancement of my
+										services.
+									</p>
+								</div>
+							</article>
+							<article class="reviews__slide slide-review swiper-slide">
+								<div class="slide-review__header">
+									<img class="slide-review__avatar" src="img/reviews/02.svg" alt="Image">
+									<div data-rating="" data-rating-value="3.8" class="slide-review__rating rating"></div>
+								</div>
+								<h4 class="slide-review__title">Floyd Miles</h4>
+								<div class="slide-review__text text" id="review_2">
+									<p>
+										Your comments will soon appear here, and I will gladly publish them and give them special attention.
+										I am open to any opinion, whether positive or negative, because your feedback helps me better
+										understand what is truly important to my clients and improves the quality of my web interfaces. My
+										goal is to create modern, user-friendly, and effective solutions that meet your expectations and
+										business needs. Your feedback is the key to my continuous development and the enhancement of my
+										services.
+									</p>
+								</div>
+							</article>
+							<article class="reviews__slide slide-review swiper-slide">
+								<div class="slide-review__header">
+									<img class="slide-review__avatar" src="img/reviews/03.svg" alt="Image">
+									<div data-rating="" data-rating-value="4.2" class="slide-review__rating rating"></div>
+								</div>
+								<h4 class="slide-review__title">Floyd Miles</h4>
+								<div class="slide-review__text text" id="review_3">
+									<p>
+										Your comments will soon appear here, and I will gladly publish them and give them special attention.
+										I am open to any opinion, whether positive or negative, because your feedback helps me better
+										understand what is truly important to my clients and improves the quality of my web interfaces. My
+										goal is to create modern, user-friendly, and effective solutions that meet your expectations and
+										business needs. Your feedback is the key to my continuous development and the enhancement of my
+										services.
+									</p>
+
+								</div>
+							</article>
+							<article class="reviews__slide slide-review swiper-slide">
+								<div class="slide-review__header">
+									<img class="slide-review__avatar" src="img/reviews/04.svg" alt="Image">
+									<div data-rating="" data-rating-value="4.5" class="slide-review__rating rating"></div>
+								</div>
+								<h4 class="slide-review__title">Floyd Miles</h4>
+								<div class="slide-review__text text" id="review_4">
+									<p>
+										Your comments will soon appear here, and I will gladly publish them and give them special attention.
+										I am open to any opinion, whether positive or negative, because your feedback helps me better
+										understand what is truly important to my clients and improves the quality of my web interfaces. My
+										goal is to create modern, user-friendly, and effective solutions that meet your expectations and
+										business needs. Your feedback is the key to my continuous development and the enhancement of my
+										services.
+									</p>
+								</div>
+							</article>
+						</div>
+						<!-- Якщо потрібна пагінація -->
+						<div class="reviews__swiper-pagination"></div>
+					</div>
+				</div>
+			</section>
+
+			<section data-watch="navigator" class="page__contacts contacts">
+				<div data-watch class="contacts__container">
+					<div class="contacts__top top">
+						<h2 class="top__title title" id="contactsTitle"><span>#</span>contacts</h2>
+					</div>
+					<div class="contacts__info">
+						<p class="contacts__text text" id="contactsText">
+							I’m interested in freelance opportunities. However, if you have other request or
+							question, don’t hesitate to contact me...
+						</p>
+						<div class="contacts__message message">
+							<h5 class="message__sub-title title-sub" id="contactsSubTitle">Message me here:</h5>
+							<ul class="message__list">
+								<li class="message__item">
+									<a href="Discord: grand_pappa_disashko" target="_blank" class="message__link message__link--discord">
+										<div class="message__blank">discord</div>
+									</a>
+								</li>
+								<li class="message__item">
+									<a href="https://wa.me/+491627651680" target="_blank" class="message__link message__link--whatsapp">
+										<div class="message__blank">whatsapp</div>
+									</a>
+								</li>
+								<li class="message__item">
+									<a href="https://t.me/grandpappadi" target="_blank" class="message__link message__link--telgram">
+										<div class="message__blank">telgram</div>
+									</a>
+								</li>
+								<li class="message__item">
+									<a href="mailto:veradocx@gmail.com" target="_blank" class="message__link message__link--mail">
+										<div class="message__blank">veradocxl@gmail.com</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__box">
+					<div class="footer__content">
+						<div class="footer__mail">
+							<a href="#" class="footer__label _icon-logo">Alex</a>
+							<a href="mailto:veradocx@gmail.com" target="_blank" class="footer__adress">veradocxl@gmail.com</a>
+						</div>
+						<div class="footer__text">
+							<p id="footer-text">High-quality web interface developer</p>
+						</div>
+					</div>
+					<div class="footer__media-item item-media">
+						<h4 class="item-media__label" id="footer-media-label">Media</h4>
+						<ul class="item-media__list">
+							<li class="item-media__item">
+								<a href="Discord: grand_pappa_disashko" target="_blank" class="item-media__link _icon-git button button--transparent">
+									<img src="img/icons/disc.svg" alt="Image">
+								</a>
+							</li>
+							<li class="item-media__item">
+								<a href="https://github.com/GrandPapaDi/portfolio" target="_blank" class="item-media__link button button--transparent">
+									<img src="img/icons/git.svg" alt="Image">
+								</a>
+							</li>
+							<li class="item-media__item">
+								<a href="https://t.me/grandpappadi" target="_blank" class="item-media__link _icon-telgram  button button--transparent">
+									<img src="img/icons/telgram.svg" alt="Image">
+								</a>
+							</li>
+							<li class="item-media__item">
+								<a href="https://www.linkedin.com/in/oleksandr-grymut-a34294272/" target="_blank" class="item-media__link button button--transparent">
+									<img src="img/icons/insta.svg" alt="Image">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer__copy">© Copyright 2022. Made by Elias</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20240930131627"></script>
+</body>
+
+</html>
