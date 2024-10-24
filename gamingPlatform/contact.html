@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20241024140442">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<a href="#" class="header__logo">LOGO</a>
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="home.html" class="menu__link">Home</a>
+							</li>
+							<li class="menu__item">
+								<a href="about_us.html" class="menu__link">About us</a>
+							</li>
+							<li class="menu__item">
+								<a href="services.html" class="menu__link">Portfolio</a>
+							</li>
+							<li class="menu__item">
+								<a href="news.html" class="menu__link">News</a>
+							</li>
+						</ul>
+					</nav>
+					<a href="contact.html" class="menu__button button">Contact us</a>
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+
+			<section class="page__services services">
+				<div class="services__container">
+					<div class="services__content">
+						<nav class="services__breadcrumbs breadcrumbs">
+							<ul class="breadcrumbs__list">
+								<li class="breadcrumbs__item">
+									<a href="home.html" class="breadcrumbs__link">Home</a>
+								</li>
+								<li class="breadcrumbs__item">
+									<a href="#" class="breadcrumbs__link"><span>Contact us</span></a>
+								</li>
+							</ul>
+						</nav>
+						<h2 class="services__sub-title sub-title sub-title--small">Lorem Ipsum is simply dummy text of the
+							printing and.
+						</h2>
+						<p class="services__text text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+						</p>
+					</div>
+					<div class="services__image">
+						<img class="services__img ibg" src="img/contact/map.svg" alt="Image">
+					</div>
+					<div class="services__contact contact">
+						<div class="contact__block">
+							<div class="contact__item contact__item--media">
+								<div class="contact__label">Follow us</div>
+								<ul class="contact__list item-list">
+									<li class="item-list__item">
+										<a href="#" class="item-list__link _icon-facebook"></a>
+									</li>
+									<li class="item-list__item">
+										<a href="#" class="item-list__link _icon-instagram"></a>
+									</li>
+									<li class="item-list__item">
+										<a href="#" class="item-list__link _icon-x1"></a>
+									</li>
+									<li class="item-list__item">
+										<a href="#" class="item-list__link _icon-linkedin"></a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="contact__item">
+								<div class="contact__icon _icon-phone">+94 4444 5555 6</div>
+							</div>
+
+							<div class="contact__item">
+								<div class="contact__icon _icon-location">but also the leap into electronic
+									typesetting</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="page__hello hello">
+				<div class="hello__container">
+					<div class="services__content">
+						<h2 class="hello__sub-title sub-title sub-title--small">
+							Say hello
+						</h2>
+						<p class="hello__text text">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+						</p>
+					</div>
+					<form class="hello__form form-hello" action="files/sendmail/sendmail.php" method="POST">
+						<div class="form-hello__items">
+							<div class="form-hello__item">
+								<label class="form-hello__label" for="first-name">First Name</label>
+								<input class="form-hello__input" type="text" name="first-name" id="first-name" required placeholder="First Name">
+							</div>
+							<div class="form-hello__item">
+								<label class="form-hello__label" for="last-name">Last Name</label>
+								<input class="form-hello__input" type="text" name="last-name" id="last-name" required placeholder="Last Name">
+							</div>
+						</div>
+						<div class="form-hello__item">
+							<label class="form-hello__label form-hello__label--email" for="email">Email</label>
+							<input class="form-hello__input form-hello__input--email" type="email" name="email-address" placeholder="you@company.com" id="email" required>
+						</div>
+						<div class="form-hello__item">
+							<label class="form-hello__label" for="message">Message</label>
+							<textarea class="form-hello__input form-hello__input--textarea" id="message" name="message" placeholder="Leave us a message...">
+							</textarea>
+						</div>
+						<button class="form-hello__button button" type="submit">Get in touch</button>
+					</form>
+
+					<svg class="hello__decor ibg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568 258" fill="none">
+						<path d="M0 90.5832C28.934 66.4404 78.6557 31.1588 137.925 15.1579C205.5 -3.08543 322.663 -16.1217 371.172 58.1153C395.132 94.784 369.128 136.415 398 168.415C426.691 200.213 474.941 179.777 511.5 196.915C543.5 211.915 552 238.415 567 256.915" stroke="#E4E4E4" />
+					</svg>
+					<svg class="hello__deco ibg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1048 267" fill="none">
+						<path d="M1 1C29.4186 32.5504 103.606 94.1487 173.008 88.1391C259.759 80.6271 319 56 393.377 79.1247C439.677 93.5199 435.257 138.219 477.137 170.771C519.017 203.323 701.495 124.197 701.495 124.197C701.495 124.197 830.127 66.6047 842.591 124.197C855.055 181.789 803.702 250.398 827.135 264.421C845.881 275.638 982.856 224.357 1049 197.313" stroke="#E17A0E" stroke-opacity="0.24" />
+					</svg>
+
+				</div>
+			</section>
+
+
+
+			<section class="page__subscribe subscribe">
+				<div class="subscribe__container">
+					<div class="subscribe__top">
+						<h3 class="subscribe__sub-title sub-title sub-title--small">Lorem Ipsum</h3>
+						<p class="subscribe__text text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+						</p>
+					</div>
+					<div class="subscribe__form form">
+						<div class="form__top">
+							<h3 class="form__sub-title sub-title sub-title--small">Stay in the loop</h3>
+							<p class="form__text text">Subscribe to receive the latest news and updates about TDA.
+								We promise not to spam you!
+							</p>
+						</div>
+						<form action="#" class="form__item">
+							<input type="email" required placeholder="Enter email address" class="form__input" autocomplete="off" name="form[]">
+							<button type="submit" class="form__button button">Continue</button>
+						</form>
+					</div>
+				</div>
+			</section>
+
+
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__body">
+					<div class="footer__item">
+						<a href="#" class="footer__logo">LOGO</a>
+						<p class="footer__text text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+						<a href="#" class="footer__logo-link">@Logo</a>
+					</div>
+					<div class="footer__menu menu-footer">
+						<ul class="menu-footer__list">
+							<h6 class="menu-footer__title">About us</h6>
+							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Zeux</a></li>
+							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Portfolio</a></li>
+							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Careers</a></li>
+							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Contact us</a></li>
+						</ul>
+						<ul class="menu-footer__list">
+							<h6 class="menu-footer__title">Contact us</h6>
+							<li class="menu-footer__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </li>
+							<li class="menu-footer__item">+908 89097 890</li>
+						</ul>
+						<ul class="menu-footer__list menu-footer-media__list">
+							<li class="menu-footer-media__item"><a href="#" class="menu-footer-media__link _icon-facebook"></a></li>
+							<li class="menu-footer-media__item"><a href="#" class="menu-footer-media__link _icon-instagram"></a></li>
+							<li class="menu-footer-media__item"><a href="#" class="menu-footer-media__link _icon-x1"></a></li>
+							<li class="menu-footer-media__item"><a href="#" class="menu-footer-media__link _icon-linkedin"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer__copy">Copyright ® 2021 Lorem All rights Rcerved</div>
+			</div>
+	</div>
+	</footer>
+	</div>
+	<script src="js/app.min.js?_v=20241024140442"></script>
+</body>
+
+</html>
