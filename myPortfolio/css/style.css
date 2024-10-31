@@ -6,11 +6,11 @@
   font-weight: 400;
   font-style: normal
 }
+.contact__link--discord::before,
 .contact__link--linkedin::before,
 .contact__link--mail::before,
 .contact__link--telgram::before,
 .contact__link--whatsapp::before,
-.contact__link::before,
 .figure__quot::after,
 .figure__quot::before,
 .message__link::before,
@@ -383,7 +383,7 @@ body::after {
   transition: all .3s;
   padding-right: 12.5rem
 }
-.contact__link::before {
+.contact__link--discord::before {
   display: flex;
   justify-content: end;
   font-size: 1.5rem;
@@ -2127,6 +2127,12 @@ body::after {
     color: #c778dd
   }
   .menu__link:hover span {
+    color: #fff
+  }
+  .menu__link._navigator-active:hover {
+    color: #c778dd
+  }
+  .menu__link._navigator-active:hover span {
     color: #fff
   }
   .work__item:hover {
