@@ -1248,6 +1248,7 @@ textarea.input {
   aspect-ratio: 1/1;
   flex: 0 0 3.625rem;
   width: 3.625rem;
+  border-radius: 50%;
   -o-object-fit: cover;
   object-fit: cover
 }
