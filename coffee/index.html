@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241103182001">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241110072705">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +22,13 @@
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="menu__link">Home</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Menu</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">About Us</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Contact Us</a></li>
+							<li data-goto-header data-goto=".hero" class="menu__item"><a href="#" class="menu__link">Home</a></li>
+							<li data-goto-header data-goto=".style" class="menu__item"><a href="#" class="menu__link">Menu</a></li>
+							<li data-goto-header data-goto=".different" class="menu__item"><a href="#" class="menu__link">About Us</a>
+							</li>
+							<li data-goto-header data-goto=".subscribe" class="menu__item"><a href="#" class="menu__link">Contact
+									Us</a>
+							</li>
 						</ul>
 					</nav>
 				</div>
@@ -39,7 +42,7 @@
 		</header>
 		<main class="page">
 
-			<section data-prlx-parent data-watch class="page__hero hero">
+			<section data-watch="navigator" data-prlx-parent class="page__hero hero">
 				<div class="hero__container">
 					<div class="hero__body">
 						<div data-prlx class="hero__sub-title-item">
@@ -72,6 +75,340 @@
 				</div>
 			</section>
 
+			<section data-watch="navigator" data-prlx-parent class="page__discover discover">
+				<div class="discover__container">
+					<div class="discover__content">
+						<h2 data-prlx data-coefficient="1.8" class="discover__title title">Discover the best coffee</h2>
+						<div class="discover__text text">
+							<p data-prlx data-coefficient="2">
+								Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity
+								and helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater.
+								There is no doubt that you will enjoy this coffee more than others you have ever tasted.
+							</p>
+						</div>
+						<div class="discover__button-item">
+							<a data-prlx data-coefficient="2.5" href="#" type="button"
+								class="discover__button button button--bold">Learn More</a>
+						</div>
+					</div>
+					<div class="discover__image">
+						<img data-prlx data-coefficient="2.5" src="img/discover/cupbean1.webp" alt="Cup" class="discover__img ibg">
+					</div>
+				</div>
+			</section>
+
+			<section data-watch="navigator" data-showmore class="page__style style">
+				<div class="style__container">
+					<div class="style__top top">
+						<div class="top__items">
+							<h2 class="top__title title">Enjoy a new blend of coffee style</h2>
+							<div class="top__text text">
+								<p>
+									Explore all flavours of coffee with us. There is always a new cup worth
+									experiencing
+								</p>
+							</div>
+						</div>
+						<div class="top__btn">
+							<button hidden data-showmore-button type="button" class="top__button button button--white">
+								<span id="viewAll">View all ~~~></span>
+								<span id="viewHidden">Hidden <~~~ </span>
+							</button>
+						</div>
+					</div>
+					<div class="style__block block">
+						<div data-showmore-content="398" class="block__items">
+							<article data-watch class="block__item">
+								<a href="#" class="block__link">
+									<img class="block__img ibg" src="img/style/01.webp" alt="Image">
+									<div class="block__content">
+										<h4 class="block__sub-title">Cappuccino</h4>
+										<div class="block__ingredients">Coffee 50% | Milk 50%</div>
+										<div class="block__price">$8.50</div>
+										<a href="#" class="block__button button">Order Now</a>
+									</div>
+								</a>
+							</article>
+							<article data-watch class="block__item">
+								<a href="#" class="block__link">
+									<img class="block__img ibg" src="img/style/02.webp" alt="Image">
+									<div class="block__content">
+										<h4 class="block__sub-title">Cappuccino</h4>
+										<div class="block__ingredients">Coffee 50% | Milk 50%</div>
+										<div class="block__price">$8.50</div>
+										<a href="#" class="block__button button">Order Now</a>
+									</div>
+								</a>
+							</article>
+							<article data-watch class="block__item">
+								<a href="#" class="block__link">
+									<img class="block__img ibg" src="img/style/03.webp" alt="Image">
+									<div class="block__content">
+										<h4 class="block__sub-title">Cappuccino</h4>
+										<div class="block__ingredients">Coffee 50% | Milk 50%</div>
+										<div class="block__price">$8.50</div>
+										<a href="#" class="block__button button">Order Now</a>
+									</div>
+								</a>
+							</article>
+							<article data-watch class="block__item">
+								<a href="#" class="block__link">
+									<img class="block__img ibg" src="img/style/04.webp" alt="Image">
+									<div class="block__content">
+										<h4 class="block__sub-title">Cappuccino</h4>
+										<div class="block__ingredients">Coffee 50% | Milk 50%</div>
+										<div class="block__price">$8.50</div>
+										<a href="#" class="block__button button">Order Now</a>
+									</div>
+								</a>
+							</article>
+							<article data-watch class="block__item">
+								<a href="#" class="block__link">
+									<img class="block__img ibg" src="img/style/01.webp" alt="Image">
+									<div class="block__content">
+										<h4 class="block__sub-title">Cappuccino</h4>
+										<div class="block__ingredients">Coffee 50% | Milk 50%</div>
+										<div class="block__price">$8.50</div>
+										<a href="#" class="block__button button">Order Now</a>
+									</div>
+								</a>
+							</article>
+							<article data-watch class="block__item">
+								<a href="#" class="block__link">
+									<img class="block__img ibg" src="img/style/02.webp" alt="Image">
+									<div class="block__content">
+										<h4 class="block__sub-title">Cappuccino</h4>
+										<div class="block__ingredients">Coffee 50% | Milk 50%</div>
+										<div class="block__price">$8.50</div>
+										<a href="#" class="block__button button">Order Now</a>
+									</div>
+								</a>
+							</article>
+							<article data-watch class="block__item">
+								<a href="#" class="block__link">
+									<img class="block__img ibg" src="img/style/03.webp" alt="Image">
+									<div class="block__content">
+										<h4 class="block__sub-title">Cappuccino</h4>
+										<div class="block__ingredients">Coffee 50% | Milk 50%</div>
+										<div class="block__price">$8.50</div>
+										<a href="#" class="block__button button">Order Now</a>
+									</div>
+								</a>
+							</article>
+							<article data-watch class="block__item">
+								<a href="#" class="block__link">
+									<img class="block__img ibg" src="img/style/04.webp" alt="Image">
+									<div class="block__content">
+										<h4 class="block__sub-title">Cappuccino</h4>
+										<div class="block__ingredients">Coffee 50% | Milk 50%</div>
+										<div class="block__price">$8.50</div>
+										<a href="#" class="block__button button">Order Now</a>
+									</div>
+								</a>
+							</article>
+						</div>
+					</div>
+				</div>
+				<div class="style__deco-item">
+					<img src="img/style/style-deco.webp" class="style__deco style__deco--left" alt="Image">
+				</div>
+				<div class="style__deco-item">
+					<img src="img/different/different.webp" class="style__deco style__deco--right" alt="Image">
+				</div>
+			</section>
+
+			<section data-watch="navigator" class="page__different different">
+				<div class="different__container">
+					<div class="different__items">
+						<h2 class="different__title title">Why are we different?</h2>
+						<div class="different__text text">
+							<p>
+								We don’t just make your coffee, we make your day!
+							</p>
+						</div>
+					</div>
+					<div class="different__slider swiper slider-different">
+						<div class="slider-different__wrapper swiper-wrapper">
+							<article class="slider-different__slide swiper-slide">
+								<img src="img/different/coffee-beans.svg" alt="Image">
+								<div class="slider-different__sub-title">Supreme Beans</div>
+								<div class="slider-different__text text">Beans that provides
+									great taste
+								</div>
+							</article>
+
+							<article class="slider-different__slide swiper-slide">
+								<img src="img/different/badge.svg" alt="Image">
+								<div class="slider-different__sub-title">Supreme Beans</div>
+								<div class="slider-different__text text">Beans that provides
+									great taste
+								</div>
+							</article>
+							<article class="slider-different__slide swiper-slide">
+								<img src="img/different/coffee-cup.svg" alt="Image">
+								<div class="slider-different__sub-title">Supreme Beans</div>
+								<div class="slider-different__text text">Beans that provides
+									great taste
+								</div>
+							</article>
+							<article class="slider-different__slide swiper-slide">
+								<img src="img/different/best-price.svg" alt="Image">
+								<div class="slider-different__sub-title">Supreme Beans</div>
+								<div class="slider-different__text text">Beans that provides
+									great taste
+								</div>
+							</article>
+							<article class="slider-different__slide swiper-slide">
+								<img src="img/different/coffee-beans.svg" alt="Image">
+								<div class="slider-different__sub-title">Supreme Beans</div>
+								<div class="slider-different__text text">Beans that provides
+									great taste
+								</div>
+							</article>
+							<article class="slider-different__slide swiper-slide">
+								<img src="img/different/coffee-cup.svg" alt="Image">
+								<div class="slider-different__sub-title">Supreme Beans</div>
+								<div class="slider-different__text text">Beans that provides
+									great taste
+								</div>
+							</article>
+						</div>
+					</div>
+					<div data-watch class="different__bottom bottom">
+						<div class="bottom__text text">
+							Great ideas start with great coffee, Lets help you achieve that
+						</div>
+						<h4 class="bottom__sub-title">Get started today.</h4>
+						<div class="bottom__button-item">
+							<a href="#" class="bottom__button button">Join Us</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section data-watch="navigator" class="page__amazing amazing">
+				<div class="amazing__container">
+					<div class="amazing__content">
+						<h2 class="amazing__title title">Get a chance to have an
+							Amazing morning</h2>
+						<div class="amazing__text text">
+							<p>
+								We are giving you are one time opportunity to
+								experience a better life with coffee.
+							</p>
+						</div>
+						<div class="amazing__button-item">
+							<a href="#" class="amazing__button button">Order Now</a>
+						</div>
+					</div>
+
+				</div>
+				<img class="amazing__cup ibg" src="img/amazing/cup.webp" alt="Image">
+				<img class="amazing__coffeebean ibg" src="img/amazing/coffee_bean.webp" alt="Image">
+				<div class="amazing__background-item">
+					<img class="amazing__background ibg" src="img/amazing/01.webp" alt="Image">
+				</div>
+			</section>
+
+			<section data-watch="navigator" class="page__feedback feedback">
+				<div class="feedback__deco-item feedback__deco-item--right">
+					<img src="img/feedback/coffee_right.webp" class="feedback__deco ibg" alt="Image">
+				</div>
+				<div class="feedback__container">
+					<div class="feedback__items">
+						<h2 class="feedback__title title">Our coffee perfection feedback</h2>
+						<div class="feedback__text text">
+							<p>
+								Our customers has amazing things to say about us
+							</p>
+						</div>
+					</div>
+					<!-- Оболонка слайдера -->
+					<div class="feedback__slider swiper feedback-slider">
+						<!-- Частина слайдера, що рухається -->
+						<div class="feedback-slider__wrapper swiper-wrapper">
+							<!-- Слайд -->
+							<div class="feedback-slider__slide swiper-slide">
+								<i class="feedback-slider__icon _icon-quot"></i>
+								<p class="feedback-slider__text text">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+									industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+									scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+									into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+									release of Letraset.....
+								</p>
+								<div class="feedback-slider__author">Jonny Thomas</div>
+								<div class="feedback-slider__profa">Project Manager</div>
+								<img class="feedback-slider__img" src="img/feedback/01.webp" alt="Image">
+							</div>
+							<!-- Слайд -->
+							<div class="feedback-slider__slide swiper-slide">
+								<i class="feedback-slider__icon _icon-quot"></i>
+								<p class="feedback-slider__text text">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+									industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+									scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+									into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+									release of Letraset.....
+								</p>
+								<div class="feedback-slider__author">Jonny Thomas</div>
+								<div class="feedback-slider__profa">Project Manager</div>
+								<img class="feedback-slider__img" src="img/feedback/01.webp" alt="Image">
+							</div>
+							<!-- Слайд -->
+							<div class="feedback-slider__slide swiper-slide">
+								<i class="feedback-slider__icon _icon-quot"></i>
+								<p class="feedback-slider__text text">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+									industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+									scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+									into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+									release of Letraset.....
+								</p>
+								<div class="feedback-slider__author">Jonny Thomas</div>
+								<div class="feedback-slider__profa">Project Manager</div>
+
+								<img class="feedback-slider__img" src="img/feedback/01.webp" alt="Image">
+
+							</div>
+						</div>
+						<div class="feedback__buttons">
+							<button type="button" class="feedback__arrow feedback__arrow--left _icon-arrow-left"></button>
+							<button type="button" class="feedback__arrow feedback__arrow--right _icon-arrow-right"></button>
+						</div>
+
+					</div>
+				</div>
+				<div class="feedback__deco-item feedback__deco-item--left">
+					<img src="img/feedback/coffee_left.webp" class="feedback__deco" alt="coffee_blast">
+				</div>
+			</section>
+
+			<section data-watch class="page__subscribe subscribe">
+				<div class="subscribe__container">
+					<div class="subscribe__items">
+						<h2 class="subscribe__title title">Subscribe to get the Latest News</h2>
+						<div class="subscribe__text text">
+							<p>
+								Don’t miss out on our latest news, updates, tips and special offers
+							</p>
+						</div>
+					</div>
+					<form class="subscribe__form form" action="files/sendmail/sendmail.php" method="POST">
+						<input type="text" name="form[email]" data-error="Error" placeholder="E-mail" class="form__input">
+						<button type="submit" class="form__button">Send</button>
+					</form>
+				</div>
+				<div class="subscribe__image-item">
+					<img class="subscribe__image ibg" src="img/subscribe/subscribe.webp" alt="Image">
+				</div>
+				<div class="subscribe__decor-item">
+					<img class="subscribe__decor subscribe__decor--left" src="img/subscribe/coffee-cup-left.webp" alt="Image">
+					<img class="subscribe__decor subscribe__decor--right" src="img/subscribe/coffee-cup-right.webp" alt="Image">
+				</div>
+			</section>
+
+
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -97,7 +434,7 @@
 									<a href="#" class="media__link _icon-youtube"></a>
 								</li>
 								<li class="media__item">
-									<a href="#" class="media__link _icon-x"></a>
+									<a href="#" class="media__link media__link--x _icon-x"></a>
 								</li>
 							</ul>
 						</div>
@@ -153,11 +490,11 @@
 				</div>
 			</div>
 			<div class="footer__image">
-				<img class="footer__img ibg" src="img/footer/footer_image.webp" alt="Image-footer">
+				<img class="footer__img ibg" src="img/footer/footer-fon.webp" alt="Image-footer">
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241103182001"></script>
+	<script src="js/app.min.js?_v=20241110072705"></script>
 </body>
 
 </html>
