@@ -1,0 +1,36 @@
+<svg width="112" height="64" viewBox="0 0 112 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_23_889)">
+<circle cx="6" cy="2" r="2" fill="#ABB2BF"/>
+<circle cx="31" cy="2" r="2" fill="#ABB2BF"/>
+<circle cx="56" cy="2" r="2" fill="#ABB2BF"/>
+<circle cx="81" cy="2" r="2" fill="#ABB2BF"/>
+<circle cx="106" cy="2" r="2" fill="#ABB2BF"/>
+<circle cx="6" cy="19.3333" r="2" fill="#ABB2BF"/>
+<circle cx="31" cy="19.3333" r="2" fill="#ABB2BF"/>
+<circle cx="56" cy="19.3333" r="2" fill="#ABB2BF"/>
+<circle cx="81" cy="19.3333" r="2" fill="#ABB2BF"/>
+<circle cx="106" cy="19.3333" r="2" fill="#ABB2BF"/>
+<circle cx="6" cy="36.6667" r="2" fill="#ABB2BF"/>
+<circle cx="31" cy="36.6667" r="2" fill="#ABB2BF"/>
+<circle cx="56" cy="36.6667" r="2" fill="#ABB2BF"/>
+<circle cx="81" cy="36.6667" r="2" fill="#ABB2BF"/>
+<circle cx="106" cy="36.6667" r="2" fill="#ABB2BF"/>
+<circle cx="6" cy="54" r="2" fill="#ABB2BF"/>
+<circle cx="31" cy="54" r="2" fill="#ABB2BF"/>
+<circle cx="56" cy="54" r="2" fill="#ABB2BF"/>
+<circle cx="81" cy="54" r="2" fill="#ABB2BF"/>
+<circle cx="106" cy="54" r="2" fill="#ABB2BF"/>
+</g>
+<defs>
+<filter id="filter0_d_23_889" x="0" y="0" width="112" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_23_889"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_23_889" result="shape"/>
+</filter>
+</defs>
+</svg>
